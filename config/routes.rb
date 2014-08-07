@@ -4,10 +4,10 @@ WarszawaHotel::Application.routes.draw do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-
+  DynamicRouter.load
 
   scope "(:locale)" do
-    DynamicRouter.load
+
 
     get 'about-hotel', to: 'about#hotel', as: :about_hotel
 
