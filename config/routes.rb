@@ -20,6 +20,8 @@ WarszawaHotel::Application.routes.draw do
     get 'contact-us', to: 'contact#index', as: :source_contact
 
     get '/order', to: 'contact#create_message', as: :source_order
+
+    root to: 'home#index'
   end
 
   get "*path", to: 'error#not_found', defaults: { error_code: 404 }
