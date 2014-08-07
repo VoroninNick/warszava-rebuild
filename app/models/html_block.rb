@@ -36,12 +36,15 @@ class HtmlBlock < ActiveRecord::Base
       #field :lock_version
 
       field :translations, :globalize_tabs
+      field :page
     end
 
     list do
       field :published
       field :name
       field :content
+
+      field :page
     end
   end
 end

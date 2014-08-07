@@ -18,6 +18,12 @@ WarszawaHotel::Application.routes.draw do
 
   get '/order', to: 'contact#create_message', as: :order
 
+  scope "(:locale)" do
+    DynamicRouter.load
+  end
+
+  get "*path", to: 'error#not_found', defaults: { error_code: 404 }
+
   # namespace :cms  do content_blocks :rooms end
   #
   # namespace :cms  do content_blocks :galleries end
@@ -92,6 +98,4 @@ WarszawaHotel::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 
   #mount_browsercms
-
-  root to: 'home#index'
 end
