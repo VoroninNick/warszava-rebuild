@@ -1,6 +1,4 @@
 WarszawaHotel::Application.routes.draw do
-
-
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
@@ -9,19 +7,19 @@ WarszawaHotel::Application.routes.draw do
   scope "(:locale)" do
 
 
-    get 'about-hotel', to: 'about#hotel', as: :about_hotel
+    get 'about-hotel', to: 'about#hotel', as: :source_about_hotel
 
-    get 'rooms', to: 'about#rooms', as: :about_rooms
+    get 'rooms', to: 'about#rooms', as: :source_about_rooms
 
-    get 'prices', to: 'about#prices', as: :about_prices
+    get 'prices', to: 'about#prices', as: :source_about_prices
 
-    get 'services', to: 'services#index', as: :services
+    get 'services', to: 'services#index', as: :source_services
 
-    get 'restaurant', to: 'about#restaurant', as: :restaurant
+    get 'restaurant', to: 'about#restaurant', as: :source_restaurant
 
-    get 'contact-us', to: 'contact#index', as: :contact
+    get 'contact-us', to: 'contact#index', as: :source_contact
 
-    get '/order', to: 'contact#create_message', as: :order
+    get '/order', to: 'contact#create_message', as: :source_order
   end
 
   get "*path", to: 'error#not_found', defaults: { error_code: 404 }
