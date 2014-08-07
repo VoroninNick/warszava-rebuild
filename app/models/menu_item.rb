@@ -20,6 +20,14 @@ class MenuItem < ActiveRecord::Base
 
   class Translation
     attr_accessible :locale, :name, :link
+
+    rails_admin do
+      nested do
+        field :locale, :hidden
+        field :name
+        field :link
+      end
+    end
   end
 
   def parent_enum
@@ -43,8 +51,8 @@ class MenuItem < ActiveRecord::Base
         end
       end
 
-      field :name
-      field :link
+      # field :name
+      # field :link
       field :linked_to_page
       field :page
 
