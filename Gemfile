@@ -55,3 +55,5 @@ gem 'rails_admin_globalize_field', github: 'VoroninNick/rails_admin_globalize_fi
 gem 'russian'
 
 gem 'rubytree'
+
+gem 'ancestry'
