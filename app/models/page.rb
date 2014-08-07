@@ -11,4 +11,6 @@ class Page < ActiveRecord::Base
   attr_accessible :sitemap_record, :sitemap_record_attributes
 
   has_many :html_blocks, as: :page
+
+
 end

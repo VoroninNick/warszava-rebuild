@@ -29,14 +29,22 @@ class Room < ActiveRecord::Base
   end
 
   rails_admin do
-    field :published
-    #field :deleted
-    #field :archived
-    #field :created_by
-    #field :updated_by
-    #field :version
-    #field :lock_version
+    edit do
+      field :published
+      #field :deleted
+      #field :archived
+      #field :created_by
+      #field :updated_by
+      #field :version
+      #field :lock_version
 
-    field :translations, :globalize_tabs
+      field :translations, :globalize_tabs
+    end
+
+    list do
+      field :published
+      field :name
+      field :full_description
+    end
   end
 end

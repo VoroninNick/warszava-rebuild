@@ -33,17 +33,26 @@ class Article < ActiveRecord::Base
 
 
   rails_admin do
-    field :published
-    #field :deleted
-    #field :archived
-    #field :created_by
-    #field :updated_by
-    #field :version
-    #field :lock_version
+    edit do
+      field :published
+      #field :deleted
+      #field :archived
+      #field :created_by
+      #field :updated_by
+      #field :version
+      #field :lock_version
 
-    field :translations, :globalize_tabs
+      field :translations, :globalize_tabs
 
-    field :page
+      field :page
+    end
+
+    list do
+      field :published
+      field :name
+      field :short_descr
+      field :description
+    end
   end
 
 end
