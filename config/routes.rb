@@ -4,22 +4,24 @@ WarszawaHotel::Application.routes.draw do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  get 'about-hotel', to: 'about#hotel', as: :about_hotel
 
-  get 'rooms', to: 'about#rooms', as: :about_rooms
-
-  get 'prices', to: 'about#prices', as: :about_prices
-
-  get 'services', to: 'services#index', as: :services
-
-  get 'restaurant', to: 'about#restaurant', as: :restaurant
-
-  get 'contact-us', to: 'contact#index', as: :contact
-
-  get '/order', to: 'contact#create_message', as: :order
 
   scope "(:locale)" do
     DynamicRouter.load
+
+    get 'about-hotel', to: 'about#hotel', as: :about_hotel
+
+    get 'rooms', to: 'about#rooms', as: :about_rooms
+
+    get 'prices', to: 'about#prices', as: :about_prices
+
+    get 'services', to: 'services#index', as: :services
+
+    get 'restaurant', to: 'about#restaurant', as: :restaurant
+
+    get 'contact-us', to: 'contact#index', as: :contact
+
+    get '/order', to: 'contact#create_message', as: :order
   end
 
   get "*path", to: 'error#not_found', defaults: { error_code: 404 }
