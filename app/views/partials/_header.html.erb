@@ -128,90 +128,35 @@
     </div>
     <div class="row">
       <nav class="of3 s9 nav-max">
+        <% if main_menu && main_menu.menu_items.count > 0 %>
         <ul>
-          <% if current_page?(about_hotel_path) || current_page?(about_rooms_path)  %>
-            <li class="m-i">
-              <span class="back-item-active-me">
-              <a href="/" title="Про готель">
-                <%= image_tag "about_hotel_act.png", :alt => 'Про готель' %>
-              </a>
-              </span>
-            </li>
-          <% else %>
-            <li class="m-i">
-              <span class="back-for-li-item">
-              <a href="/about-hotel" title="Про готель">
-                <%= image_tag "about_hotel.png", :alt => 'Про готель' %>
-              </a>
-              </span>
-            </li>
-          <% end %>
-          <% if current_page?(services_path) %>
-          <li class="m-i">
-            <span class="back-item-active-me">
-            <a href="/services" title="Послуги">
-                <%= image_tag "services_act.png", :alt => 'Послуги' %>
-            </a>
-            </span>
-          </li>
-          <% else %>
-          <li class="m-i">
-            <span class="back-for-li-item">
-            <a href="/services" title="Послуги">
-                <%= image_tag "services.png", :alt => 'Послуги' %>
-            </a>
-            </span>
-          </li>
-          <% end %>
+          <% main_menu = main_menu %>
+          <% about_menu = about_menu %>
+          <% about_menu_items = about_menu.menu_items %>
+          <% about_menu_item_page_ids = [] %>
+          <% about_menu_items.each {|item| about_menu_item_page_ids.push(item.page.id) } %>
 
-
-
-
-
-
-
-
-          <% if current_page?(restaurant_path)  %>
-            <li class="m-i">
-              <span class="back-item-active-me">
-              <a href="/restaurant" title="Ресторан">
-                 <%= image_tag "res_act.png", :alt => 'Ресторан' %>
-              </a>
-            </li>
+          <% main_menu.menu_items.each do |item| %>
+            <% if page.id == item.page.id || about_menu_item_page_ids.include?(page.id) %>
+              <li class="m-i active">
+                <span class="back-item-active-me">
+                  <a href="<% "/#{params[:locale]}#{item.page.path}" %>" title="<%= item.name %>">
+                    <%= item.name %>
+                  </a>
+                </span>
+              </li>
             <% else %>
-            <li class="m-i">
-              <span class="back-for-li-item">
-              <a href="/restaurant" title="Ресторан">
-                 <%= image_tag "res.png", :alt => 'Ресторан' %>
-              </a>
-            </li>
-          <% end %>
-
-
-
-
-
-
-
-
-
-
-          <% if current_page?(contact_path) %>
-            <li class="m-i">
-              <span class="back-item-active-me">
-              <a href="/contact-us" title="Контакти">
-                 <%= image_tag "contact_us_act.png", :alt => 'Контакти' %>
-              </a>
-            </li>
-            <% else %>
-            <li class="m-i">
-              <span class="back-for-li-item">
-              <a href="/contact-us" title="Контакти">
-                 <%= image_tag "contact_us.png", :alt => 'Контакти' %>
-              </a>
-            </li>
+              <li class="m-i">
+                <span class="back-for-li-item">
+                  <a href="<% "/#{params[:locale]}#{item.page.path}" %>" title="<%= item.name %>">
+                    <%= item.name %>
+                  </a>
+                </span>
+              </li>
+            <% end %>
           <% end %>
         </ul>
+        <% end %>
       </nav>
   </div><!-- /nav -->
   </header><!-- /header -->
