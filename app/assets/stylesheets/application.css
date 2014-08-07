@@ -1,0 +1,58 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+#wr{
+position: relative !important;
+top: -467px !important;
+margin-top: 0 !important;
+}
+
+.fancybox-iframe{
+  width: 640px !important;
+  height: 710px !important;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.fancybox-inner{
+  height: 710px !important;
+}
+
+p.phone-number{
+  font-size: 18px !important;
+  line-height: 24px !important;
+}
+
+
+.link-line a{
+  display: block;
+  float: left;
+  margin-right: 90px;
+}
+
+.link-line a:last-child{
+  margin-right: 0
+}
+
+iframe body{
+ margin: 0;
+}
+
+
+.about-main-img{
+  height: 512px;
+}

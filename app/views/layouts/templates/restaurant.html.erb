@@ -1,0 +1,26 @@
+<%= render :partial => "partials/header" %>
+
+<section id="wr" class="container">
+    <div id="bring-me-up">
+      <article id="about-us-page" class="row">
+        <div class="s3 about-full-width">
+          &nbsp;
+        </div>
+        <div class="s9 about-full-width">
+          <div>
+            <h1 class="about-h1">Вітаємо у ресторані варшава</h1>
+            <%= image_tag("res-about.jpg", :class => "br about-main-img") %>
+          </div>
+          <div class="about-header"><%= container :resheader %></div>
+          <div class="about-header-sub1"><%= container :resheadersub1 %></div>
+        </div>
+      </article>
+    </div>
+    <div class="push-crown row">
+        <div class="s5 br-h">&nbsp;</div>
+        <div class="s2" style="text-align: center;"><%= image_tag("crown-end.png") %></div>
+        <div class="s5 br-h crown-last-width">&nbsp;</div>
+      </div>
+</section>
+
+<%= render :partial => "partials/footer" %>

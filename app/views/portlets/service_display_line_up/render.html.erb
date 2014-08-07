@@ -1,0 +1,49 @@
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function() {
+      $(".fancy-me").fancybox({
+        openEffect  : 'elastic',
+        closeEffect : 'elastic',
+        nextEffect : 'fade',
+        prevEffect : 'fade'
+      });
+  });
+</script>
+<% @services_line_up.each do |item| %>
+<!-- SERVICES DISPLAY LINE UP -->
+        <div class="service-bg-each s12 " id="sr<%= item.id %>">
+          <div class="s5 <%= cycle("", "service-second") %> hide-me-if-im-small service-no-margin">
+            <% item.images.first(1).each do |img| %>
+              <%= link_to(image_tag(img.url(:bigser), :alt => "", :class => "br"), img.url(:big), :rel => "sr#{img.attachable_id}", :class => "fancy-me") %>
+            <% end %>
+          </div>
+          <div class="s7 hide-me-if-im-small">
+            <h2 id="no-pad">
+              <%= item.name %>
+            </h2>
+            <div class="services-full-descr">
+              <%= item.full_description.html_safe %>
+            </div>
+            <% item.images.last(6).each do |img2| %>
+              <%= link_to(image_tag(img2.url(:miniser), :alt => "", :class => "br", :style => "color: white !important; margin-bottom: 10px;"), img2.url(:big), :class => "service-img-margin hide-me-if-im-small fancy-me", :rel => "sr#{img2.attachable_id}") %>
+            <% end %>
+          </div>
+          <!-- SHOW ME UP IF IM SMALL -->
+          <div class="s12 show-me-if-im-small"><h2><%= item.name %></h2></div>
+          <div class="s6 show-me-if-im-small size-up-first-img">
+            <% item.images.first(1).each do |img| %>
+              <%= link_to(image_tag(img.url(:bigser), :alt => "", :class => "br"), img.url(:big), :rel => "sr#{img.attachable_id}", :class => "fancy-me") %>
+            <% end %>
+          </div>
+          <div class="s6 show-me-if-im-small size-up-last-img">
+            <% item.images.last(2).each do |img2| %>
+              <%= link_to(image_tag(img2.url(:miniser), :alt => "", :class => "br service-margin-me", :style => "color: white !important;"), img2.url(:big), :class => "service-img-margin fancy-me ", :rel => "sr#{img2.attachable_id}") %>
+            <% end %>
+            <% item.images.last(1).each do |img3| %>
+              <%= link_to(image_tag(img3.url(:last_img), :alt => "", :class => "br service-margin-me service-img-last", :style => "color: white !important;"), img3.url(:big), :class => "service-img-margin fancy-me ", :rel => "sr#{img3.attachable_id}") %>
+            <% end %>
+          </div>
+          <div class="s12 show-me-if-im-small"><p class="services-full-descr"><%= item.full_description.html_safe %></p></div>
+          <!-- /SHOW ME UP IF IM SMALL -->
+        </div>
+<!-- /SERVICES DISPLAY LINE UP -->
+<% end %>

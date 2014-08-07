@@ -1,0 +1,193 @@
+<%= render :partial => "partials/header" %>
+<script>
+  $(document).ready(function(){
+    $('.iframe').fancybox(function(){
+      console.log('up here');
+    });
+  });
+</script>
+<a href="" class="iframe"></a>
+<section id="wr" class="container">
+    <div id="bring-me-up">
+      <article id="about-us-page" class="row">
+        <div class="s3 about-full-width ">
+          <ul id="about-us-nav">
+            <li class="us-nav about-hide-element"><%= image_tag("crown-about.png") %></li>
+            <li class="us-nav about-line-up-menu">
+              <% if current_page.path == "/about-hotel" %>
+                <%= image_tag("h1-mr.png", :alt => ">", :class => "nav-selector") %>
+              <% else %>
+                <div class="push-nav">&nbsp;</div>
+              <% end %>
+              <a href="/about-hotel" title="Про Готель">
+                Про Готель
+              </a>
+            </li>
+            <li class="us-nav about-line-up-menu">
+              <% if current_page.path == "/rooms" %>
+                <%= image_tag("h1-mr.png", :alt => ">", :class => "nav-selector") %>
+              <% else %>
+                <div class="push-nav">&nbsp;</div>
+              <% end %>
+              <a href="/rooms" title="Номери">Номери</a>
+            </li>
+            <li class="us-nav about-line-up-menu">
+              <% if current_page.path == "/prices" %>
+                <%= image_tag("h1-mr.png", :alt => ">", :class => "nav-selector") %>
+              <% else %>
+                <div class="push-nav">&nbsp;</div>
+              <% end %>
+              <a href="/prices" title="Ціни на проживання">Ціни</a>
+            </li>
+            <!--li class="us-nav about-line-up-menu">
+              <%# if current_page.path == "/vacancy" %>
+                <%#= image_tag("h1-mr.png", :alt => ">", :class => "nav-selector") %>
+              <%# else %>
+                <div class="push-nav">&nbsp;</div>
+              <%# end %>
+              <a href="/vacancy" title="Вакансії">Вакансії</a>
+            </li -->
+            <li class="us-nav about-hide-element"><%= image_tag("leavs-about.png") %></li>
+          </ul>
+        </div>
+        <div class="s9 about-full-width about-fix-width">
+          <%= container :prices_table %>
+          <style>
+          table{
+            width: 100%;
+          }
+            thead{
+              width: 100%;
+	      background: url('assets/form-background_03.jpg') repeat rgba(0, 0, 0, 0) !important;
+              border: 1px solid rgb(177, 173, 170) !important;
+	      padding: 5px 0;
+	     }
+            .f-td{
+              width: 40%;
+	      padding: 5px 0;
+            }
+            .s-td{
+              width: 15%;
+	      padding: 5px 0;
+            }
+            .th-td{
+              width: 22,5%;
+	      padding: 5px 0;
+            }
+            .fo-td{
+              width: 22,5%;
+	      padding: 5px 0;
+            }
+            .f-td p,
+            .s-td p,
+            .th-td p,
+            .fo-td p{
+              margin-left: 10px;
+              margin-bottom: 2px;
+            }
+            .f-td p i,
+            .s-td p i,
+            .th-td p i,
+            .fo-td p i{
+	      color: #53381b;
+              font-size: 12px;
+            }
+            .p-cent{
+              text-align: center;
+            }
+            .descr-price{
+              margin-top: 30px;
+              margin-bottom: 280px;
+            }
+
+            .descr-price p{
+              margin-bottom: 6px;
+            }
+
+	    .price-p{
+              font-size: 20px;
+	     }
+
+	    tr.transparent{
+	      background: transparent;
+	    }
+
+	    tr.colored{
+	      background: #cab8a9;
+	    }
+          </style>
+          <table>
+            <thead>
+              <tr>
+                <td class="f-td"><p>Категорія номеру</p> <p><i>Room category</i></p></td>
+                <td class="s-td"><p>Кількість</p> <p><i>Quantity</i></p></td>
+                <td class="th-td"><p>Ціна за добу, грн.</p> <p><i>Rate per night, UAH</i></p></td>
+                <td class="fo-td"><p>Додаткове ліжко, грн.</p> <p><i>Extra bed, UAH</i></p></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="transparetn">
+                <td class="f-td"><p>Двомісний стандартний з двома ліжками</p> <p><i>Standard Twin</i></p></td>
+                <td class="s-td"><p class="p-cent">19</p></td>
+                <td class="th-td"><p class="p-cent price-p">350,00</p></td>
+                <td class="fo-td"><p class="p-cent">100,00</p></td>
+              </tr>
+              <tr class="colored">
+                <td class="f-td"><p>Двомісний стандартний</p> <p><i>Double Standard</i></p></td>
+                <td class="s-td"><p class="p-cent">13</p></td>
+                <td class="th-td"><p class="p-cent price-p">350,00</p></td>
+                <td class="fo-td"><p class="p-cent">100,00</p></td>
+              </tr>
+              <tr class="transparent">
+                <td class="f-td"><p>Комфорт</p> <p><i>Comfort</i></p></td>
+                <td class="s-td"><p class="p-cent">2</p></td>
+                <td class="th-td"><p class="p-cent price-p">450,00</p></td>
+                <td class="fo-td"><p class="p-cent">100,00</p></td>
+              </tr>
+              <tr class="colored">
+                <td class="f-td"><p>Напівлюкс</p> <p><i>Junior Suite</i></p></td>
+                <td class="s-td"><p class="p-cent">1</p></td>
+                <td class="th-td"><p class="p-cent price-p">550,00</p></td>
+                <td class="fo-td"><p class="p-cent">&mdash;</p></td>
+              </tr>
+              <tr class="transparent">
+                <td class="f-td"><p>Люкс</p> <p><i>Suite</i></p></td>
+                <td class="s-td"><p class="p-cent">6</p></td>
+                <td class="th-td"><p class="p-cent price-p">750,00</p></td>
+                <td class="fo-td"><p class="p-cent">&mdash;</p></td>
+              </tr>
+              <tr class="colored">
+                <td class="f-td"><p>Номер для молодят</p> <p><i>Wedding Junior Suite</i></p></td>
+                <td class="s-td"><p class="p-cent">1</p></td>
+                <td class="th-td"><p class="p-cent price-p">550,00</p></td>
+                <td class="fo-td"><p class="p-cent">&mdash;</p></td>
+              </tr>
+            </tbody>
+            <tfoot>
+            </tfoot>
+          </table>
+          <div class="descr-price">
+            <p>Розрахункова година в готелі 12:00; година заїзду 14:00, сніданок 8:00 – 10:00</p>
+            <p><i>Check-out time 12:00, check-in time 14:00, breakfast 8:00 – 10:00</i></p>
+            <br class="clearfix" />
+            <p>Ціна номера включає: Wi-Fi ІНТЕРНЕТ, паркінг,, камеру схову, доставку кореспонденції, виклик таксі, податки.</p>
+            <p><i>The price includes: WI-FI INTERNET ACCESS, parking,, correspondence delivery, taxi ordering and taxes.</i></p>
+            <br class="clearfix" />
+            <p>При виїзді протягом 12 годин після розрахункової години плата за проживання береться ще за половину доби.</p>
+            <p><i>In case the room is vacated 12 hours after check-out hour, the fee is charged for additional <sup>½</sup> price.</i></p>
+            <br class="clearfix" />
+            <p>Гарантований ранковий заїзд – половина вартості номеру за добу.</p>
+            <p><i>Guaranteed early check-in -1/2 of room rate.</i></p>
+          </div>
+        </div>
+        <br class="clearfix" />
+        <div id="pushup" style="height: 320px;">&nbsp;</div>
+      </article>
+      <div class="push-crown row">
+        <div class="s5 br-h">&nbsp;</div>
+        <div class="s2" style="text-align: center;"><%= image_tag("crown-end.png") %></div>
+        <div class="s5 br-h crown-last-width">&nbsp;</div>
+      </div>
+    </div>
+</section>
+<%= render :partial => "partials/footer" %>

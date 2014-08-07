@@ -1,0 +1,20 @@
+
+<script type="text/javascript">
+    var map;
+    $(document).ready(function(){
+      prettyPrint();
+      map = new GMaps({
+        div: '#map',
+        lat: 49.880215,
+        lng: 24.060681,
+        zoom: 15
+      });
+      map.addMarker({
+        lat: 49.880214,
+        lng: 24.060800,
+        
+      });
+    });
+</script>
+
+<div id="map" class="gmap-partial-loader br"></div>

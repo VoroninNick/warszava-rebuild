@@ -1,0 +1,85 @@
+<%= render :partial => "partials/header" %>
+<section id="wr" class="container">
+    <div id="bring-me-up">
+      <article id="about-us-page" class="row">
+        <div class="s3 about-full-width ">
+          <ul id="about-us-nav">
+            <li class="us-nav about-hide-element"><%= image_tag("crown-about.png") %></li>
+            <li class="us-nav about-line-up-menu">
+              <% if current_page.path == "/about-hotel" %>
+                <%= image_tag("h1-mr.png", :alt => ">", :class => "nav-selector") %>
+              <% else %>
+                <div class="push-nav">&nbsp;</div>
+              <% end %>
+              <a href="/about-hotel" title="Про Готель">
+                Про Готель
+              </a>
+            </li>
+            <li class="us-nav about-line-up-menu">
+              <% if current_page.path == "/rooms" %>
+                <%= image_tag("h1-mr.png", :alt => ">", :class => "nav-selector") %>
+              <% else %>
+                <div class="push-nav">&nbsp;</div>
+              <% end %>
+              <a href="/rooms" title="Номери">Номери</a>
+            </li>
+            <li class="us-nav about-line-up-menu">
+              <% if current_page.path == "/loyalty" %>
+                <%= image_tag("h1-mr.png", :alt => ">", :class => "nav-selector") %>
+              <% else %>
+                <div class="push-nav">&nbsp;</div>
+              <% end %>
+              <a href="/prices" title="Ціни на проживання">Ціни</a>
+            </li>
+            <!--li class="us-nav about-line-up-menu">
+              <%# if current_page.path == "/vacancy" %>
+                <%#= image_tag("h1-mr.png", :alt => ">", :class => "nav-selector") %>
+              <%# else %>
+                <div class="push-nav">&nbsp;</div>
+              <%# end %>
+              <a href="/vacancy" title="Вакансії">Вакансії</a>
+            </li -->
+            <li class="us-nav about-hide-element"><%= image_tag("leavs-about.png") %></li>
+          </ul>
+        </div>
+        <div class="s9 about-full-width about-fix-width">
+          <div>
+            <h1 class="about-h1">Вітаємо у готелі-ресторані варшава</h1>
+
+            <iframe src="http://embed.virtual.ua/booking_hotels-4255" width="100%" height="400" frameborder="no" scrolling="no" class="br about-main-img"></iframe>
+		<%#= image_tag("about-main-img.jpg", :class => "br about-main-img") %>
+          </div>
+          <div class="about-header"><%= container :aboutheader %></div>
+          <div class="about-header-sub1"><%= container :aboutheadersub1 %></div>
+        </div>
+	<br class="clearfix" />
+        <div class="s6 about-full-width about-fix-width get-me-right">
+            <blockquote style="margin-top: 130px;">
+              <em class="begin">«</em>
+                <div class="about-header-blockquote"><%= container :aboutheaderblockquote %></div>
+              <em class="end">»</em>
+            </blockquote>
+          </div>
+          <div class="s6 about-full-width about-fix-width get-me-right">
+            <div class="about-header-sub2"><%= container :aboutheadersub2 %></div>
+            <div class="about-header-sub3"><%= container :aboutheadersub3 %></div>
+          </div>
+          <div class="s9 about-full-width get-me-right">
+            <div class="about-header-sub4"><%= container :aboutheadersub4 %></div>
+          </div>
+          <div class="s9 about-full-width get-me-right">
+            <div class="about-header-sub5"><%= container :aboutheadersub5 %></div>
+          </div>
+
+          <%= container :aboutgallery %>
+
+      </article>
+
+    </div>
+    <div class="push-crown row">
+        <div class="s5 br-h">&nbsp;</div>
+        <div class="s2" style="text-align: center;"><%= image_tag("crown-end.png") %></div>
+        <div class="s5 br-h crown-last-width">&nbsp;</div>
+      </div>
+</section>
+<%= render :partial => "partials/footer" %>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <title>
+    <% if 1 == 2 %>
+        <% if cookies[:language] == "ukr" %><%= page_title %><% elsif cookies[:language] == "eng"  %><%= current_page.title_eng %><% else %><%= page_title %><% end %> //Готель львів//Готель варшава//Готелі львова//Львів готель
+    <% else %>
+        <%= @title %>
+    <% end %>
+  </title>
+  <meta name="keywords" content="<%= @keywords %>" />
+  <meta name="description" content="<%= @description %>" />
+
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+
+  <link href="/assets/application.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/assets/bootstrap.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/assets/cms/articles.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/assets/cms/banners.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/assets/cms/galleries.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/assets/cms/rooms.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/assets/cms/services.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/assets/cms/vacancies.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/assets/flexslider.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/assets/jquery.fancybox.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/assets/media-tablets.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/assets/skin.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/assets/style.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  <%= javascript_include_tag "application" %>
+
+  <meta name="google-site-verification" content="TMkyLisT1wu2GUyNoCsb4Q_soqLb9gkDlVg5ugAwyz4" />
+  <meta name="google-site-verification" content="4o6Tbuv0f7R0dS7qQv7xF60E68DKfXhxEh-5fxWDMa4" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="icon" href="/assets/favicon.ico" type="image/ico" />
+  <link rel="shortcut icon" href="/assets/favicon.ico" type="image/ico" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/apple-icon-114.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/apple-icon-72.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-icon-54.png" />
+  <%# yield :html_head %>
+  <meta name="studio" content="Дизайн студія Миколи Вороніна" />
+  <meta name="art-director" content="Микола Воронін" />
+  <meta name="web-developer" content="Калантаєвській Віктор" />
+  <!--[if IE]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+  <!--[if IE]> <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script> <![endif]-->
+  <script type="text/javascript">
+    var $buoop = {vs:{i:8,f:3.6,o:10.6,s:4,n:9}}
+    $buoop.ol = window.onload;
+    window.onload=function(){
+     try {if ($buoop.ol) $buoop.ol();}catch (e) {}
+     var e = document.createElement("script");
+     e.setAttribute("type", "text/javascript");
+     e.setAttribute("src", "http://browser-update.org/update.js");
+     document.body.appendChild(e);
+    }
+  </script>
+
+  <script type="text/javascript">
+  $(window).load(function() {
+    //<!-- flexslider -->
+    $('.slide-me-dude').flexslider({
+      randomize: true,
+      directionNav: false
+    });
+
+    //<!-- gmap -->
+  });
+
+  function set_ukr(){
+    $.cookie('language', 'ukr', { expires: 1 });
+    window.location.reload();
+  }
+  function set_eng(){
+    $.cookie('language', 'eng', { expires: 1 });
+    window.location.reload();
+  }
+
+  function goToByScroll(id){
+    $('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');
+  }
+
+  </script>
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34722321-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+<body <%= request.env['HTTP_CACHE_CONTROL'] %> data="<%= request.env['HTTP_ACCEPT_ENCODING'] %>">
+  <%# cms_toolbar %>
+  <div class="browser-shadow-me"></div>
+  <div class="lang-bar container" >
+
+    <div class="row ">
+      <div class="s3 lang-row">
+    <div id="ukr" data="language-selector">
+      <%= image_tag("ws-flag-ua.png", :alt => "Україньска мова", :class => "lang-img-shrink", :onclick => "set_ukr()") %>
+    </div>
+    <div id="eng" data="language-selector">
+      <%= image_tag("ws-flag-uk.png", :alt => "English language", :class => "lang-img-shrink", :onclick => "set_eng()") %>
+    </div>
+    </div>
+    </div>
+  </div>
+  <header id="header" class="container">
+    <div class="row">
+      <div class="lg s4">
+        <% if current_page?(root_path) %>
+        <a href="/" title="Вернутись на головну">
+          <%= image_tag("logo.png", :alt => "Вернутись на головну") %>
+        </a>
+        <% else %>
+          <%= image_tag("logo.png", :alt => "Вернутись на головну") %>
+        <% end %>
+      </div>
+
+    </div>
+    <div class="row">
+      <nav class="of3 s9 nav-max">
+        <ul>
+          <% if current_page?(about_hotel_path) || current_page?(about_rooms_path)  %>
+            <li class="m-i">
+              <span class="back-item-active-me">
+              <a href="/" title="Про готель">
+                <%= image_tag "about_hotel_act.png", :alt => 'Про готель' %>
+              </a>
+              </span>
+            </li>
+          <% else %>
+            <li class="m-i">
+              <span class="back-for-li-item">
+              <a href="/about-hotel" title="Про готель">
+                <%= image_tag "about_hotel.png", :alt => 'Про готель' %>
+              </a>
+              </span>
+            </li>
+          <% end %>
+          <% if current_page?(services_path) %>
+          <li class="m-i">
+            <span class="back-item-active-me">
+            <a href="/services" title="Послуги">
+                <%= image_tag "services_act.png", :alt => 'Послуги' %>
+            </a>
+            </span>
+          </li>
+          <% else %>
+          <li class="m-i">
+            <span class="back-for-li-item">
+            <a href="/services" title="Послуги">
+                <%= image_tag "services.png", :alt => 'Послуги' %>
+            </a>
+            </span>
+          </li>
+          <% end %>
+
+
+
+
+
+
+
+
+          <% if current_page?(restaurant_path)  %>
+            <li class="m-i">
+              <span class="back-item-active-me">
+              <a href="/restaurant" title="Ресторан">
+                 <%= image_tag "res_act.png", :alt => 'Ресторан' %>
+              </a>
+            </li>
+            <% else %>
+            <li class="m-i">
+              <span class="back-for-li-item">
+              <a href="/restaurant" title="Ресторан">
+                 <%= image_tag "res.png", :alt => 'Ресторан' %>
+              </a>
+            </li>
+          <% end %>
+
+
+
+
+
+
+
+
+
+
+          <% if current_page?(contact_path) %>
+            <li class="m-i">
+              <span class="back-item-active-me">
+              <a href="/contact-us" title="Контакти">
+                 <%= image_tag "contact_us_act.png", :alt => 'Контакти' %>
+              </a>
+            </li>
+            <% else %>
+            <li class="m-i">
+              <span class="back-for-li-item">
+              <a href="/contact-us" title="Контакти">
+                 <%= image_tag "contact_us.png", :alt => 'Контакти' %>
+              </a>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+  </div><!-- /nav -->
+  </header><!-- /header -->
+  <div class="first-article-bg-full"></div>

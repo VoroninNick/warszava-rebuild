@@ -1,0 +1,21 @@
+<script type="text/javascript" charset="utf-8">
+  //Slide items in carusel - vertical position
+  $(document).ready(function() {
+      $('#sl-item').jcarousel({
+          vertical: false,
+          scroll: 1
+      });
+      $(".fancy-me-mate").fancybox();
+  });
+</script>
+<div class="s12 push-me-down jcarousel-skin-tango">
+  <ul id="sl-item" class="">
+    <% @home_gallery.each do |i| %>
+    <% i.home_sliders.each do |ii| %>
+    <li class="li-sl br ">
+      <%= link_to(image_tag(ii.url(:mini), :alt => "<", :class => "jcarusel-img"), ii.url(:bigone),:class => "fancy-me-mate", :rel => "fancy-home-gallery-items") %>
+    </li>
+    <% end %>
+    <% end %>
+  </ul>
+</div>

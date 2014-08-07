@@ -1,0 +1,36 @@
+<%= render :partial => "partials/header" %>
+<section id="wr" class="container">
+    <div id="bring-me-up">
+    <article id="banner" class="row">
+      <%= container :banner %>
+    </article>
+    <article id="welcome" class="row">
+        <div class="s3 w-logo">
+          <%= image_tag("w-logo.png", :alt => "") %>
+        </div>
+        <div class="s1 w-l">&nbsp;</div>
+        <div class="s8 w-msg">
+          <h2><%= container :welh2 %></h2>
+          <p class="w-p1"><%= container :welp1 %></p>
+          <p class="w-p2"><%= container :welp2 %></p>
+          <!-- <p class="w-p3"><a href="/contact-us">Переглянути карту доїзду</a> або <a href="/about-hotel">дізнатись більше про готель</a></p> -->
+          <p class="w-p3 link-line"><a href="/about-hotel">Детальніше про готель</a> <a href="http://warszawa.virtual.ua">Віртуальний тур</a> <a href="/contact-us">Карта доїзду</a></p>
+        </div>
+    </article>
+    <article id="service" class="row">
+        <%= container :services %>
+    </article>
+    <article id="slider" class="row">
+      <%= container :slider_carusel %>
+    </article>
+    <article id="news" class="row">
+      <%= container :news %>
+    </article>
+    <div class="push-crown row">
+      <div class="s5 br-h">&nbsp;</div>
+      <div class="s2" style="text-align: center;"><%= image_tag("crown-end.png") %></div>
+      <div class="s5 br-h crown-last-width">&nbsp;</div>
+    </div>
+    </div>
+</section>
+<%= render :partial => "partials/footer" %>

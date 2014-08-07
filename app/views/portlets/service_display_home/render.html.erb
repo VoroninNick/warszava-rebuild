@@ -1,0 +1,19 @@
+<div class="s12">
+  <h2 class="br-h">
+    <a href="/services" title="ПОСЛУГИ">ПОСЛУГИ</a>
+  </h2>
+</div>
+<% @services_at_home.each do |item| %>
+<div class="s3 s-max s-italic <%= cycle("", "", "", "last-me") %>">
+  <a href="/services#sr<%= item.id %>" title="<%= item.name %>">
+    <h3><%= image_tag("h1-mr.png", :alt => ">", :class => "h1-mr") %><%= item.name %></h3>
+  </a>
+  <a href="/services#sr<%= item.id %>" title="<%= item.name %>">
+    <% item.images.first(1).each do |img| %>
+      <%= image_tag(img.url(:home), :alt => "", :class => "br", :style => "width: 100%;") %>
+    <% end %> 
+  </a>
+    <p style="height: 8px; margin: 0;">&nbsp;</p>
+    <%= item.short_description.html_safe %>
+</div>
+<% end %>

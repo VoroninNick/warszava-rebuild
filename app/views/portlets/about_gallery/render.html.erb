@@ -1,0 +1,13 @@
+<div class="s12" id="about-gallery"><h2 class="br-h">ФОТОГАЛЕРЕЯ</h2></div>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".fancy-me-mate").fancybox();
+  });
+</script>
+<% @about_gallery.each do |about_item| %>
+  <% about_item.about_hotels.each do |image| %>
+    <div class="s3 about-gallery-full-width about-gallery-margin">
+      <%= link_to(image_tag(image.url(:mini), :alt => "", :class => "br about-gallery-img"), image.url(:bigone),:class => "fancy-me-mate about-gallery-img", :rel => "fancy-about-gallery-items") %>
+    </div>
+  <% end %>
+<% end %>

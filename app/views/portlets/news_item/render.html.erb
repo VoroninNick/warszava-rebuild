@@ -1,0 +1,39 @@
+<div class="s12" style="margin-bottom: 30px;">
+  <h1 class="br-h" style="text-align: right;">
+    Анонси
+  </h1>
+</div>
+<h1 class="" style="margin-bottom: 50px;text-align: center;">
+    <%= @news_item.name %>
+  </h1>
+<div class="s5">
+<% @news_item.avatars.each do |image| %>
+  <%= image_tag(image.url(:preview), :class => "br f-l") %>
+<% end %>
+</div>
+<div class="s7">
+  <p>
+    <%= @news_item.description.html_safe %>
+  </p>
+</div>
+
+
+<div class="s12" style="margin-bottom: -14px;margin-top: 15px;">
+  <h2 class="br-h fix-margin-h2">
+    Читайте також
+  </h2>
+</div>
+<% @news_random.each do |item| %>
+  <div class="s6 n-max <%= cycle("", "", "pad-n", "pad-n") %>">
+  <% item.avatars.first(1).each do |image| %>     
+    <%= link_to image_tag(image.url(:ava), :class => "br f-l"), "/articles/#{item.id}", :class => "remove-brown-shit" %>
+  <% end %>
+  <div class="pad-r">
+    <a href="/articles/<%= item.id %>" title="<%= item.name %>">
+      <h3><%= item.name %></h3>
+    </a>
+    <p><%= truncate(item.description.html_safe, :length => 115) %></p>
+      <%= link_to image_tag("h1-mr.png", :alt => ">"), "/articles/#{item.id}", :class => "f-r", :title => "#{item.name}" %>
+  </div><!-- class:pad-r -->
+</div><!-- class:s6 n-max -->
+<% end %>

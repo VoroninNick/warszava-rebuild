@@ -1,0 +1,20 @@
+<div class="s12" style="margin-bottom: 30px;">
+  <h1 class="br-h">
+    АНОНСИ
+  </h1>
+</div>
+
+<% @news_all.each do |item| %>
+  <div class="s6 n-max <%= cycle("", "", "pad-n", "pad-n") %>">
+  <% item.avatars.first(1).each do |image| %>     
+    <%= link_to image_tag(image.url(:ava), :class => "br f-l"), "/articles/#{item.id}", :class => "remove-brown-shit" %>
+  <% end %>
+  <div class="pad-r">
+    <a href="/articles/<%= item.id %>" title="<%= item.name %>">
+      <h3><%= item.name %></h3>
+    </a>
+    <p><%= truncate(item.description.html_safe, :length => 115) %></p>
+      <%= link_to image_tag("h1-mr.png", :alt => ">"), "/articles/#{item.id}", :class => "f-r", :title => "#{item.name}" %>
+  </div><!-- class:pad-r -->
+</div><!-- class:s6 n-max -->
+<% end %>

@@ -1,0 +1,11 @@
+<div class="s12 slide-me-dude">
+  <ul class="slides">
+    <% @home_banners.each do |banner| %>
+        <% banner.banner_images.each do |image| %>
+            <li>
+              <%= image_tag(image.image.url, :class => "slide-me") %>
+            </li>
+        <% end %>
+    <% end %>
+  </ul>
+</div>
