@@ -141,7 +141,7 @@ nav ul li a:active,
 nav ul li a:visited{
   margin-left: 0px;
   margin-right: 0px;
-  color: #5b2c16;
+  color: #d8a21e;
 }
 nav ul li a img{
   margin-top: -5px;
@@ -158,11 +158,15 @@ nav ul li:last-child{
 }
 .back-for-li-item{
   background: url('ws-menu-bg-1.png') no-repeat transparent;
-  padding-bottom: 7px;
-  padding-top: 6px;
   border: 1px solid white;
   border-bottom: 0px;
+  padding-bottom: 7px;
+  padding-top: 6px;
   padding-left: 5px;
+  padding: 0;
+  line-height: 40px;
+  display: block;
+  text-align: center;
   /*
   border-left: 1px solid white;
   border-right: 1px solid white;
@@ -186,8 +190,8 @@ nav ul li:last-child{
   margin-left: 805px;
   margin-top: -14px;
 }
-#ukr,
-#eng{
+#uk,
+#en{
   float: left;
   margin-right: 15px;
   cursor: pointer !important;
