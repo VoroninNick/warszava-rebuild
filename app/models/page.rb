@@ -22,7 +22,7 @@ class Page < ActiveRecord::Base
   def reload_routes_after_save
 
     counter = 0
-    if new_record?
+    if new_record? || controller_changed? || action_changed?
       counter = 1
     else
       self.translations.each do |t|
