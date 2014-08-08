@@ -146,8 +146,7 @@ nav ul li a:visited{
   /* beautiful text */
 
   background: -webkit-linear-gradient(#eee, #333);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+
 
   /*color: transparent;*/
   font-size: 17px;
@@ -165,6 +164,10 @@ nav ul li a:visited{
     background: -ms-linear-gradient(-45deg, rgba(155,82,18,1) 0%, rgba(254,233,46,1) 38%, rgba(254,232,32,1) 64%, rgba(152,89,16,1) 100%); /* IE 10+ */
     background: linear-gradient(135deg, rgba(155,82,18,1) 0%, rgba(254,233,46,1) 38%, rgba(254,232,32,1) 64%, rgba(152,89,16,1) 100%);/* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9b5212', endColorstr='#985910', GradientType=1 );/* IE6-9 fallback on horizontal gradient */
+
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
 }
 nav ul li a img{
