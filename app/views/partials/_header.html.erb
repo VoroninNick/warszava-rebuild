@@ -139,7 +139,7 @@
           <% end %>
 
           <% main_menu_obj.menu_items.each do |item| %>
-            <% if page.id == item.page.id || about_menu_item_page_ids.include?(page.id) %>
+            <% if page && (page.id == item.page.id || about_menu_item_page_ids.include?(page.id)) %>
               <li class="m-i active">
                 <span class="back-item-active-me">
                   <a href="<% "/#{params[:locale]}#{item.page.path}" %>" title="<%= item.name %>">
@@ -149,6 +149,7 @@
               </li>
             <% else %>
               <li class="m-i">
+                <span class="info"><%= page.inspect %></span>
                 <span class="back-for-li-item">
                   <a href="<% "/#{params[:locale]}#{item.page.path}" %>" title="<%= item.name %>">
                     <%= item.name %>
