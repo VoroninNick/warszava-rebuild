@@ -149,6 +149,10 @@ nav ul li a:visited{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
+  color: transparent;
+  font-size: 17px;
+  font-weight: 700;
+
 
 
  /* gradient background */
