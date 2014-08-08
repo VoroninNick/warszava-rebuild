@@ -132,9 +132,11 @@
         <ul>
           <% main_menu = main_menu %>
           <% about_menu = about_menu %>
-          <% about_menu_items = about_menu.menu_items %>
-          <% about_menu_item_page_ids = [] %>
-          <% about_menu_items.each {|item| about_menu_item_page_ids.push(item.page.id) } %>
+          <% if about_menu %>
+            <% about_menu_items = about_menu.menu_items %>
+            <% about_menu_item_page_ids = [] %>
+            <% about_menu_items.each {|item| about_menu_item_page_ids.push(item.page.id) } %>
+          <% end %>
 
           <% main_menu.menu_items.each do |item| %>
             <% if page.id == item.page.id || about_menu_item_page_ids.include?(page.id) %>
