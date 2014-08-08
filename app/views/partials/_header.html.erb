@@ -130,15 +130,15 @@
       <nav class="of3 s9 nav-max">
         <% if main_menu && main_menu.menu_items.count > 0 %>
         <ul>
-          <% main_menu = main_menu %>
-          <% about_menu = about_menu %>
-          <% if about_menu %>
-            <% about_menu_items = about_menu.menu_items %>
+          <% main_menu_obj = main_menu %>
+          <% about_menu_obj = about_menu %>
+          <% if about_menu_obj %>
+            <% about_menu_items = about_menu_obj.menu_items %>
             <% about_menu_item_page_ids = [] %>
             <% about_menu_items.each {|item| about_menu_item_page_ids.push(item.page.id) } %>
           <% end %>
 
-          <% main_menu.menu_items.each do |item| %>
+          <% main_menu_obj.menu_items.each do |item| %>
             <% if page.id == item.page.id || about_menu_item_page_ids.include?(page.id) %>
               <li class="m-i active">
                 <span class="back-item-active-me">
