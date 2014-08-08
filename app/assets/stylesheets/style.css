@@ -141,7 +141,7 @@ nav ul li a:active,
 nav ul li a:visited{
   margin-left: 0px;
   margin-right: 0px;
-  color: #d8a21e;
+  /*color: #d8a21e;*/
 
   /* beautiful text */
 
@@ -149,7 +149,7 @@ nav ul li a:visited{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  color: transparent;
+  /*color: transparent;*/
   font-size: 17px;
   font-weight: 700;
 
