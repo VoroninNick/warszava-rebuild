@@ -4,6 +4,8 @@ class HtmlBlock < ActiveRecord::Base
 
   belongs_to :page, polymorphic: true
 
+  attr_accessible :page_id, :page_type
+
   translates :name, :content
   accepts_nested_attributes_for :translations
   attr_accessible :translations, :translations_attributes

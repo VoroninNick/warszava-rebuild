@@ -57,3 +57,6 @@ gem 'russian'
 gem 'rubytree'
 
 gem 'ancestry'
+
+gem 'fancybox2-rails'
+gem 'jcarousel-rails', github: 'dmgarland/jcarousel-rails'

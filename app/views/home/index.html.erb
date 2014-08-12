@@ -1,8 +1,8 @@
 <section id="wr" class="container">
   <div id="bring-me-up">
-    <article id="banner" class="row">
-      <%= render partial: 'partials/home_banner' %>
-    </article>
+
+    <%= render partial: 'partials/home_banner' %>
+
     <article id="welcome" class="row">
       <div class="s3 w-logo">
         <%= image_tag("w-logo.png", :alt => "") %>
@@ -10,6 +10,7 @@
       <div class="s1 w-l">&nbsp;</div>
       <div class="s8 w-msg">
         <h2><%# container :welh2 %></h2>
+        <h2><%= raw welcome_block_title %></h2>
         <p class="w-p1"><%# container :welp1 %></p>
         <p class="w-p2"><%# container :welp2 %></p>
         <!-- <p class="w-p3"><a href="/contact-us">Переглянути карту доїзду</a> або <a href="/about-hotel">дізнатись більше про готель</a></p> -->
@@ -18,9 +19,11 @@
     </article>
     <article id="service" class="row">
       <%# container :services %>
+      <%= render partial: 'home/home_services' %>
     </article>
     <article id="slider" class="row">
       <%# container :slider_carusel %>
+      <%= render partial: 'home/home_gallery' %>
     </article>
     <article id="news" class="row">
       <%# container :news %>

@@ -11,6 +11,7 @@ class Page < ActiveRecord::Base
   attr_accessible :sitemap_record, :sitemap_record_attributes
 
   has_many :html_blocks, as: :page
+  attr_accessible :html_block_ids, :html_blocks
 
   after_save :reload_routes_after_save
   after_destroy :reload_routes_after_destroy
@@ -66,6 +67,8 @@ class Page < ActiveRecord::Base
     edit do
       field :name
       field :translations, :globalize_tabs
+
+      field :html_blocks
       group :advanced do
         active false
         field :controller

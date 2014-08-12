@@ -1,11 +1,54 @@
-<div class="s12 slide-me-dude">
-  <ul class="slides">
-    <% @home_banners.each do |banner| %>
-        <% banner.banner_images.each do |image| %>
-            <li>
-              <%= image_tag(image.image.url, :class => "slide-me") %>
+<article id="home-banner" class="row">
+  <% home_banner = @home_banners.first %>
+  <% home_banner_images = home_banner.banner_images.first(3) %>
+  <style>
+    <% home_banner_images.each_with_index do |image, index| %>
+      #home-banner #home-banner-radio-<%= (index+1).to_s %>:checked ~ ul.slides li.slide#slide-<%= (index+1).to_s %> {
+          opacity: 1;
+          z-index: <%= home_banner_images.count %>;
+          transition: opacity 1s ease-in-out;
+      }
+
+    #home-banner #home-banner-radio-<%= (index+1).to_s %>:checked ~ ul.bullets li label.home-banner-label#home-banner-label-<%= index+1 %>{
+        cursor: default;
+        position: relative;
+        background: url('<%= asset_path('sw-ban.png') %>') no-repeat transparent -25px 0px;
+    }
+    <% end %>
+
+    <% home_banner_images.each_with_index do |image, index| %>
+    #home-banner #home-banner-radio-autoplay:checked ~ ul.slides > li.slide#slide-<%= index+1 %> {
+        -webkit-animation: kenberns-<%= index+1 %> <%= home_banner_images.count * 8 %>s infinite <%= -2 + index*8 %>s linear;
+    }
+
+    #home-banner #home-banner-radio-autoplay:checked ~ ul.bullets > li label.home-banner-label#home-banner-label-<%= index+1 %> {
+        -webkit-animation: bullet-<%= index+1 %> <%= home_banner_images.count * 8 %>s infinite <%= -2 + index*8 %>s linear;
+    }
+    <% end %>
+  </style>
+
+  <div  class="s12">
+
+
+    <input checked="" type="radio" name="home-banner-radio" class="home-banner-radio" id="home-banner-radio-autoplay" />
+    <% home_banner_images.each_with_index do |image, index| %>
+      <input type="radio" name="home-banner-radio" class="home-banner-radio" id="home-banner-radio-<%= (index+1).to_s %>" />
+    <% end %>
+
+    <ul class="slides">
+        <% home_banner_images.each_with_index do |image, index| %>
+            <li class="slide" id="slide-<%= (index+1).to_s %>">
+              <%= image_tag(image.image.home_banner.url) %>
             </li>
         <% end %>
-    <% end %>
-  </ul>
-</div>
+    </ul>
+
+    <ul class="bullets">
+      <% home_banner_images.each_with_index do |image, index| %>
+          <li>
+            <label class="home-banner-label" id="home-banner-label-<%= (index+1).to_s %>" for="home-banner-radio-<%= (index+1).to_s %>" ></label>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+</article>

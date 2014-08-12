@@ -1,0 +1,26 @@
+<% if @home_gallery_images && @home_gallery_images.count > 0 %>
+<article id="slider" class="row">
+
+  <script type="text/javascript" charset="utf-8">
+      //Slide items in carusel - vertical position
+      $(document).ready(function() {
+          $('#sl-item').jcarousel({
+              vertical: false,
+              scroll: 1
+          });
+          $(".fancy-me-mate").fancybox();
+      });
+  </script>
+  <div class="s12 push-me-down jcarousel-skin-tango">
+    <ul id="sl-item" class="">
+
+      <% @home_gallery_images.each do |image| %>
+      <li class="li-sl br ">
+        <a href="<%= image.image.home_gallery_large.url %>" class="fancy-me-mate" rel="fancy-home-gallery-items"><img alt="&lt;" class="jcarusel-img" src="<%= image.image.home_gallery_thumb.url %>" /></a>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+
+</article>
+<% end %>
