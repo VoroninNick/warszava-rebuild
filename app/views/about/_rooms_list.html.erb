@@ -1,0 +1,46 @@
+<% @rooms.each do |room| %>
+    <div class="service-bg-each s12 " id="sr<%= room.id %>">
+      <div class="s5  hide-me-if-im-small service-no-margin">
+        <img alt="" class="br" src="<%= room.avatar.room_avatar.url %>" />
+      </div>
+      <div class="s7 hide-me-if-im-small">
+        <h2 id="no-pad">
+          <img alt="&gt;" class="h1-mr" src="/assets/h1-mr.png" /><%= room.name %>
+        </h2>
+        <div class="services-full-descr">
+          <%= raw room.full_description %>
+        </div>
+        <% room.room_gallery_images.each do |image| %>
+            <a href="<%= image.image.room_large.url %>" class="service-img-margin hide-me-if-im-small fancy-me" rel="sr<%= room.id %>">
+              <img alt="" class="br" src="<%= image.image.room_thumb.url %>" style="color: white !important;" />
+            </a>
+        <% end %>
+
+        <div class="order">
+          <a data-fancybox-type="iframe" href="http://warszawa-hotel.com.ua:6060/order">Замовити</a>
+        </div>
+      </div>
+      <!-- SHOW ME UP IF IM SMALL -->
+      <div class="s12 show-me-if-im-small"><h2><img alt="&gt;" class="h1-mr" src="/assets/h1-mr.png" /><%= room.name %></h2></div>
+      <div class="s6 show-me-if-im-small size-up-first-img">
+        <img alt="" class="br" src="<%= room.avatar.room_avatar.url %>" />
+      </div>
+      <% if room.room_gallery_images.count > 0 %>
+          <div class="s6 show-me-if-im-small size-up-last-img">
+            <% room.room_gallery_images.each_with_index do |image, index| %>
+                <a href="<% image.image.room_large.url %>" class="service-img-margin fancy-me " rel="sr<%= room.id %>">
+                  <img alt="" class="br service-margin-me<%= " service-img-last" if index == room.room_gallery_images.count - 1 %>" src="<%= image.image.room_thumb.url %>" style="color: white !important;" />
+                </a>
+            <% end %>
+          </div>
+      <% end %>
+      <div class="s12 show-me-if-im-small">
+        <p class="services-full-descr">
+          <%= raw room.full_description %>
+        </p>
+      </div>
+      <!-- /SHOW ME UP IF IM SMALL -->
+    </div>
+<% end %>
+
+

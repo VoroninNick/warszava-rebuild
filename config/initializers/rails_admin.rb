@@ -32,9 +32,9 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  config.included_models = [Pages::AboutPage, Pages::HomePage, Banner, BannerImage, Gallery, SitemapRecord, User, Menu, HomeGalleryImage]
+  config.included_models = [Pages::AboutPage, Pages::HomePage, Banner, BannerImage, Gallery, SitemapRecord, User, Menu, HomeGalleryImage, AboutPageGalleryImage, RoomGalleryImage, ServiceGalleryImage]
 
-  [Service, Room, Article, Vacancy, HtmlBlock, Page, MenuItem].each do |model|
+  [Service, Room, Article, Vacancy, HtmlBlock, Page, MenuItem, Pages::RoomsList, Pages::Restaurant].each do |model|
     config.included_models += [model, model::Translation]
   end
 end

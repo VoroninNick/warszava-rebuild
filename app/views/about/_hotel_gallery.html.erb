@@ -1,0 +1,18 @@
+<% if @about_page.about_page_gallery_images.count > 0 %>
+<div class="s12" id="about-gallery"><h2 class="br-h">ФОТОГАЛЕРЕЯ</h2></div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".fancy-me-mate").fancybox();
+    });
+</script>
+
+<% @about_page.about_page_gallery_images.each do |image| %>
+
+<div class="s3 about-gallery-full-width about-gallery-margin">
+  <a href="<%= image.image.about_page_large.url %>" class="fancy-me-mate about-gallery-img" rel="fancy-about-gallery-items">
+    <img alt="" class="br about-gallery-img" src="<%= image.image.about_page_thumb.url %>" />
+  </a>
+</div>
+<% end %>
+
+<% end %>

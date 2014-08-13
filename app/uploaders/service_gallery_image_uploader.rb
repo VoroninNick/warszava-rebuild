@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class ServiceAvatarUploader < CarrierWave::Uploader::Base
+class ServiceGalleryImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
@@ -31,18 +31,18 @@ class ServiceAvatarUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
+  version :service_thumb do
+    process resize_to_fill: [145, 96]
+  end
+
+  version :service_large do
+    process resize_to_fill: [800, 600]
+  end
+
   # Create different versions of your uploaded files:
   # version :thumb do
   #   process :resize_to_fit => [50, 50]
   # end
-
-  version :service_avatar do
-    process resize_to_fill: [420, 279]
-  end
-
-  version :service_avatar_large do
-    process resize_to_fill: [800, 600]
-  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

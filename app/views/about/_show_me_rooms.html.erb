@@ -1,0 +1,86 @@
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+        $(".fancy-me").fancybox({
+            openEffect  : 'elastic',
+            closeEffect : 'elastic',
+            nextEffect : 'fade',
+            prevEffect : 'fade'
+        });
+
+        $(".order a").fancybox({
+            maxWidth  : 640,
+            maxHeight : 820,
+            fitToView : false,
+            width   : '70%',
+            height    : '100%',
+            autoSize  : false,
+            closeClick  : false,
+            openEffect  : 'none',
+            closeEffect : 'none',
+            padding: 0
+        });
+    });
+</script>
+<style>
+    .order{
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+    .order a{
+        font-size: 20px;
+        font-style: italic;
+        border-bottom: 1px solid rgba(91, 44, 22, 0);
+        text-decoration: none !important;
+        -webkit-transition: 0.35s ease-out all;
+        -moz-transition: 0.35s ease-out all;
+        -ms-transition: 0.35s ease-out all;
+        -o-transition: 0.35s ease-out all;
+        transition: 0.35s ease-out all;
+    }
+
+    .order a:hover{
+        border-bottom: 1px solid rgba(91, 44, 22, 1);
+    }
+</style>
+
+<% @rooms.each do |item| %>
+    <!-- ROOMS DISPLAY LINE UP -->
+    <div class="service-bg-each s12 " id="sr<%= item.id %>">
+      <div class="s5 <%= cycle("", "service-second") %> hide-me-if-im-small service-no-margin">
+        <% [item.avatar].first(1).each do |avatar| %>
+            <%= image_tag(avatar.room_avatar.url, :alt => "", :class => "br") %>
+        <% end %>
+      </div>
+      <div class="s7 hide-me-if-im-small">
+        <h2 id="no-pad">
+          <%= image_tag("h1-mr.png", :alt => ">", :class => "h1-mr") %><%= item.name %>
+        </h2>
+        <div class="services-full-descr">
+          <%= item.full_description.html_safe %>
+        </div>
+        <% item.room_gallery_images.each do |image| %>
+            <%= link_to(image_tag(image.image.room_thumb.url, :alt => "", :class => "br", :style => "color: white !important;"), image.image.room_large.url, :class => "service-img-margin hide-me-if-im-small fancy-me", :rel => "sr#{item.id}") %>
+        <% end %>
+
+        <div class="order">
+          <a data-fancybox-type="iframe" href="http://warszawa-hotel.com.ua:6060/order">Замовити</a>
+        </div>
+      </div>
+      <!-- SHOW ME UP IF IM SMALL -->
+      <div class="s12 show-me-if-im-small"><h2><%= image_tag("h1-mr.png", :alt => ">", :class => "h1-mr") %><%= item.name %></h2></div>
+      <div class="s6 show-me-if-im-small size-up-first-img">
+        <% [item.avatar].first(1).each do |img| %>
+            <%= image_tag(img.room_avatar.url, :alt => "", :class => "br") %>
+        <% end %>
+      </div>
+      <div class="s6 show-me-if-im-small size-up-last-img">
+        <% item.room_gallery_images.each_with_index do |image, index| %>
+            <%= link_to(image_tag(image.image.room_thumb.url, :alt => "", :class => "br service-margin-me", :style => "color: white !important;"), image.image.room_large.url, :class => "service-img-margin fancy-me#{" service-img-last" if index == item.room_gallery_images.count}", :rel => "sr#{item.id}") %>
+        <% end %>
+
+      </div>
+      <div class="s12 show-me-if-im-small"><p class="services-full-descr"><%= item.full_description.html_safe %></p></div>
+      <!-- /SHOW ME UP IF IM SMALL -->
+    </div>
+    <!-- /ROOMS DISPLAY LINE UP -->
+<% end %>

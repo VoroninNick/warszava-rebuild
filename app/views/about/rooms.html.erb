@@ -38,7 +38,10 @@
           <h1 class="about-h1">Номери</h1>
           <%= image_tag("rooms_new.jpg", :class => "br about-main-img") %>
         </div>
-        <p class="about-header"><%# container :roomsheader %></p>
+        <p class="about-header">
+        <%# container :roomsheader %>
+          <%= raw @rooms_page.intro_text %>
+        </p>
         <p class="about-header-sub1"><%# container :roomsheadersub1 %></p>
       </div>
 
@@ -46,7 +49,7 @@
 
       <%# container :roomsheadersub4 %>
 
-
+      <%= render partial: 'about/show_me_rooms' %>
 
 
 

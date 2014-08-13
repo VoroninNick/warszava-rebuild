@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class ServiceAvatarUploader < CarrierWave::Uploader::Base
+class RoomGalleryImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
@@ -36,11 +36,11 @@ class ServiceAvatarUploader < CarrierWave::Uploader::Base
   #   process :resize_to_fit => [50, 50]
   # end
 
-  version :service_avatar do
-    process resize_to_fill: [420, 279]
+  version :room_thumb do
+    process resize_to_fill: [145, 96]
   end
 
-  version :service_avatar_large do
+  version :room_large do
     process resize_to_fill: [800, 600]
   end
 

@@ -8,9 +8,9 @@ class ApplicationController < ActionController::Base
     if params[:controller].index('devise').nil?
       locale = params[:locale]
       if request.path[0..5] != '/admin'
-        if !locale
+        if !locale || params[:locale_missed_in_request_url] == true
           preferred_locale = http_accept_language.compatible_language_from(I18n.available_locales)
-
+          #render inline: "#{preferred_locale}"
           if preferred_locale
             locale = preferred_locale
 
@@ -18,13 +18,13 @@ class ApplicationController < ActionController::Base
 
           else
             locale = I18n.default_locale
+
           end
         end
 
-        if locale != params[:locale]
+        if locale != params[:locale] || params[:locale_missed_in_request_url] == true
           redirect_to url_for(locale: locale)
         end
-
         I18n.locale = locale
       end
     end

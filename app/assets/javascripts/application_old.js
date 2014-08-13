@@ -10,10 +10,17 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-// stub jquery-1.7.2.min
-// stub application_old
-//= require jquery
+// stub application
+//= require jquery-1.7.2.min
 //= require jquery_ujs
 //= require fancybox
 //= require modernizr
-//= require_directory .
+//= require border
+//= require contact-validator
+//= require cookie
+//= require gmaps
+//= require jquery.fancybox.pack
+//= require jquery.flexslider-min
+//= require jquery.jcarousel.min
+//= require jquery.mousewheel-3.0.6.pack
+

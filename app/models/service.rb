@@ -13,6 +13,11 @@ class Service < ActiveRecord::Base
   mount_uploader :avatar, ServiceAvatarUploader
   attr_accessible :remove_avatar, :avatar_cache
 
+  has_many :service_gallery_images
+  attr_accessible :service_gallery_images
+  accepts_nested_attributes_for :service_gallery_images
+  attr_accessible :service_gallery_images_attributes
+
   class Translation
     attr_accessible :locale, :name, :short_description, :full_description
 
@@ -43,6 +48,7 @@ class Service < ActiveRecord::Base
       #field :lock_version
 
       field :translations, :globalize_tabs
+      field :service_gallery_images
     end
 
     list do

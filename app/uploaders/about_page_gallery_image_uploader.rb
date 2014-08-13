@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class ServiceAvatarUploader < CarrierWave::Uploader::Base
+class AboutPageGalleryImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
@@ -32,15 +32,11 @@ class ServiceAvatarUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  # version :thumb do
-  #   process :resize_to_fit => [50, 50]
-  # end
-
-  version :service_avatar do
-    process resize_to_fill: [420, 279]
+  version :about_page_thumb do
+    process resize_to_fill: [240, 159]
   end
 
-  version :service_avatar_large do
+  version :about_page_large do
     process resize_to_fill: [800, 600]
   end
 

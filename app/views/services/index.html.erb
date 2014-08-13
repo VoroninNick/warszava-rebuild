@@ -12,28 +12,16 @@
 
           <%# end %>
 
+          <% @services.each do |service| %>
+
           <li class="us-nav about-line-up-menu t-center">
-            <a title="Конференц-зал" href="#sr6" onClick="">
-              Конференц-зал
+            <a title="<%= service.name %>" href="#sr<%= service.id %>" onClick="">
+              <%= service.name %>
             </a>
           </li>
-          <li class="us-nav about-line-up-menu t-center">
-            <a title="Банкети" href="#sr9" onClick="">
-              Банкети
-            </a>
-          </li>
-          <li class="us-nav about-line-up-menu t-center">
-            <a href="#sr8" title="Весілля">Весілля</a>
-          </li>
-          <li class="us-nav about-line-up-menu t-center">
-            <a href="#sr5" title="Спа-центр">Спа-центр</a>
-          </li>
-          <li class="us-nav about-line-up-menu t-center">
-            <a href="#sr10" title="Більярд">Більярд</a>
-          </li>
-          <li class="us-nav about-line-up-menu t-center">
-            <a href="#sr12" title="Рибалка">Рибалка</a>
-          </li>
+
+          <% end %>
+
           <!-- <li class="us-nav about-line-up-menu t-center">
             <a href="#sr11" title="Додаткові послуги">Додаткові</a>
           </li> -->
@@ -95,6 +83,7 @@
         </div>
       </div>
       <%# container :serviceslist %>
+      <%= render partial: 'services/show_me_services' %>
     </article>
 
   </div>

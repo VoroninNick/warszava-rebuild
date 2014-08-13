@@ -5,6 +5,15 @@ class Room < ActiveRecord::Base
   attr_accessible :name, :full_description
   attr_accessible :published, :deleted, :archived, :created_by, :updated_by, :version, :lock_version
 
+  attr_accessible :avatar
+  mount_uploader :avatar, RoomAvatarUploader
+  attr_accessible :remove_avatar, :avatar_cache
+
+  has_many :room_gallery_images
+  attr_accessible :room_gallery_images
+  accepts_nested_attributes_for :room_gallery_images
+  attr_accessible :room_gallery_images_attributes
+
 
 
   translates :name, :full_description
@@ -31,6 +40,8 @@ class Room < ActiveRecord::Base
   rails_admin do
     edit do
       field :published
+      field :avatar
+
       #field :deleted
       #field :archived
       #field :created_by
@@ -39,12 +50,15 @@ class Room < ActiveRecord::Base
       #field :lock_version
 
       field :translations, :globalize_tabs
+      field :room_gallery_images
     end
 
     list do
       field :published
       field :name
       field :full_description
+
+
     end
   end
 end
