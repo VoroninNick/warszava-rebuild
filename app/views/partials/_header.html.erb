@@ -116,7 +116,7 @@
   <header id="header" class="container">
     <div class="row">
       <div class="lg s4">
-        <% if current_page?(root_path) %>
+        <% if !page || page.id != Pages::HomePage.first.id %>
         <a href="/" title="Вернутись на головну">
           <%= image_tag("logo.png", :alt => "Вернутись на головну") %>
         </a>

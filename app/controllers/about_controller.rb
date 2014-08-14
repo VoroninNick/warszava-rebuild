@@ -13,7 +13,7 @@ class AboutController < ApplicationController
     @meta_description = ''
     @meta_keywords = ''
 
-
+    @restaurant_page = Pages::Restaurant.first
   end
 
   def rooms

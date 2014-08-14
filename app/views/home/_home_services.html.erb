@@ -12,7 +12,7 @@
       <h3><img alt=">" class="h1-mr" src="/assets/h1-mr.png"><%= s.name %></h3>
     </a>
     <a href="<%= "#{@services_page.path}#sr#{s.id}" %>" title="<% s.name %>">
-      <img alt="" class="br" src="/attachments/377/IMG_9925.JPG?style=home" style="width: 100%;">
+      <img alt="" class="br" src="<%= s.avatar.service_avatar_home.url %>" style="width: 100%;">
     </a>
     <p style="height: 8px; margin: 0;">&nbsp;</p>
     <div>

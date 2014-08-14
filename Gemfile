@@ -44,6 +44,7 @@ gem 'devise'
 gem 'ckeditor'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'mini_magick'
 
 gem 'http_accept_language'
 

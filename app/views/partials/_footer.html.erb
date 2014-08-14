@@ -7,16 +7,19 @@
       </p>
     </div>
 
-    <div class="s8 foot-line-up" style="margin-left: 62px;">
-      <ul id="foot-m">
-        <li><a href="/about-hotel" title="ГОТЕЛЬ">ГОТЕЛЬ</a></li>
-        <li><a href="/rooms" title="НОМЕРИ">НОМЕРИ</a></li>
-        <li><a href="/restaurant" title="РЕСТОРАН">РЕСТОРАН</a></li>
-        <li><a href="/services" title="ПОСЛУГИ">ПОСЛУГИ</a></li>
-        <li><a href="/articles" title="АНОНСИ">АНОНСИ</a></li>
-        <li><a href="/contact-us" title="КОНТАКТИ">КОНТАКТИ</a></li>
-      </ul>
-    </div>
+    <% foot_menu = footer_menu  %>
+    <% if foot_menu && foot_menu.menu_items.count > 0 %>
+        <div class="s8 foot-line-up" style="margin-left: 62px;">
+          <ul id="foot-m">
+            <% foot_menu.menu_items.each do |menu_item| %>
+                <li>
+                  <a href="<%= "/#{params[:locale]}#{menu_item.page.path}" %>" title="<%= menu_item.name.upcase %>"><%= menu_item.name.upcase %></a>
+                </li>
+            <% end %>
+
+          </ul>
+        </div>
+    <% end %>
     <div class="push-foot" style="height: 30px;">&nbsp;</div>
     <div class="s4 vs-div foot-line-up">
       <%= image_tag("vs-logo.png", :alt => "") %>

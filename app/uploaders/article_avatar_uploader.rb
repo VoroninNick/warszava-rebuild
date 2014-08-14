@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class ServiceAvatarUploader < CarrierWave::Uploader::Base
+class ArticleAvatarUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
@@ -36,16 +36,12 @@ class ServiceAvatarUploader < CarrierWave::Uploader::Base
   #   process :resize_to_fit => [50, 50]
   # end
 
-  version :service_avatar do
-    process resize_to_fill: [420, 279]
+  version :thumb do
+    process resize_to_fill: [140, 90]
   end
 
-  version :service_avatar_large do
-    process resize_to_fill: [800, 600]
-  end
-
-  version :service_avatar_home do
-    process resize_to_fill: [216, 90]
+  version :avatar do
+    process resize_to_fill: [440, 440]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

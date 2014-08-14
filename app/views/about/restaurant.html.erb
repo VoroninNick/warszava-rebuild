@@ -5,12 +5,7 @@
         &nbsp;
       </div>
       <div class="s9 about-full-width">
-        <div>
-          <h1 class="about-h1">Вітаємо у ресторані варшава</h1>
-          <%= image_tag("res-about.jpg", :class => "br about-main-img") %>
-        </div>
-        <div class="about-header"><%# container :resheader %></div>
-        <div class="about-header-sub1"><%# container :resheadersub1 %></div>
+        <%= raw @restaurant_page.content %>
       </div>
     </article>
   </div>

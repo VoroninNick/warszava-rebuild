@@ -14,16 +14,22 @@ class Page < ActiveRecord::Base
   attr_accessible :html_block_ids, :html_blocks
 
   after_save :reload_routes_after_save
-  after_destroy :reload_routes_after_destroy
+  #after_destroy :reload_routes_after_destroy
 
   def reload_routes_after_destroy
     DynamicRouter.reload
   end
 
+  attr_accessible :published
+
+  def published
+    (custom_page.nil?)? true : ( custom_page.respond_to?(:published) && custom_page.published == true )
+  end
+
   def reload_routes_after_save
 
     counter = 0
-    if new_record? || controller_changed? || action_changed?
+    if (new_record? || controller_changed? || action_changed?) && self.published
       counter = 1
     else
       self.translations.each do |t|
@@ -61,6 +67,14 @@ class Page < ActiveRecord::Base
 
       end
     end
+  end
+
+  def full_path
+    if self.custom_page_type == 'Article'
+      return "/articles/#{self.path}"
+    end
+
+    "/#{self.path}"
   end
 
   rails_admin do

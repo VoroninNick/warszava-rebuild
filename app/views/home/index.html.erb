@@ -4,18 +4,7 @@
     <%= render partial: 'partials/home_banner' %>
 
     <article id="welcome" class="row">
-      <div class="s3 w-logo">
-        <%= image_tag("w-logo.png", :alt => "") %>
-      </div>
-      <div class="s1 w-l">&nbsp;</div>
-      <div class="s8 w-msg">
-        <h2><%# container :welh2 %></h2>
-        <h2><%= raw welcome_block_title %></h2>
-        <p class="w-p1"><%# container :welp1 %></p>
-        <p class="w-p2"><%# container :welp2 %></p>
-        <!-- <p class="w-p3"><a href="/contact-us">Переглянути карту доїзду</a> або <a href="/about-hotel">дізнатись більше про готель</a></p> -->
-        <p class="w-p3 link-line"><a href="/about-hotel">Детальніше про готель</a> <a href="http://warszawa.virtual.ua">Віртуальний тур</a> <a href="/contact-us">Карта доїзду</a></p>
-      </div>
+        <%= raw @home_page.welcome_html %>
     </article>
     <article id="service" class="row">
       <%# container :services %>
@@ -27,6 +16,7 @@
     </article>
     <article id="news" class="row">
       <%# container :news %>
+      <%= render partial: 'home/home_articles' %>
     </article>
     <div class="push-crown row">
       <div class="s5 br-h">&nbsp;</div>
