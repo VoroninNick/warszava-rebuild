@@ -17,7 +17,26 @@ class Article < ActiveRecord::Base
   accepts_nested_attributes_for :translations
   attr_accessible :translations, :translations_attributes
 
-  #before_save :init_page
+  class Translation
+    attr_accessible :locale, :name, :short_descr, :description
+    belongs_to :article, class_name: Article
+
+    rails_admin do
+      edit do
+
+      end
+
+      nested do
+        field :locale, :hidden
+        field :name
+        field :short_descr
+        field :description
+
+      end
+    end
+  end
+
+  before_save :init_page
 
   def init_page
     if !page
@@ -25,7 +44,7 @@ class Article < ActiveRecord::Base
     end
 
     I18n.available_locales.each do |locale|
-      I18n.with_locale t.locale do
+      I18n.with_locale locale do
         page.path = name.parameterize
         page.name = name.parameterize
 
@@ -36,7 +55,13 @@ class Article < ActiveRecord::Base
 
   end
 
-  #after_save :check_page
+  after_save :check_page, :reload_routes_if_published_changed
+
+  def reload_routes_if_published_changed
+    if self.published_changed?
+      DynamicRouter.reload
+    end
+  end
 
   def check_page
     if !page
@@ -86,27 +111,8 @@ class Article < ActiveRecord::Base
       end
     end
 
+
     p.save
-  end
-
-
-
-  class Translation
-    attr_accessible :locale, :name, :short_descr, :description
-
-    rails_admin do
-      edit do
-
-      end
-
-      nested do
-        field :locale, :hidden
-        field :name
-        field :short_descr
-        field :description
-
-      end
-    end
   end
 
 

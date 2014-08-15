@@ -1,5 +1,4 @@
 WarszawaHotel::Application.routes.draw do
-  root to: 'home#test', as: 'root_test'
 
 
   mount Ckeditor::Engine => '/ckeditor'

@@ -23,7 +23,9 @@ class ApplicationController < ActionController::Base
         end
 
         if locale != params[:locale] || params[:locale_missed_in_request_url] == true
-          redirect_to url_for(locale: locale)
+          #redirect_to url_for(locale: locale)
+          redirect_to "/#{locale}#{request.path}"
+          #render inline: "/#{locale}#{request.path}"
         end
         I18n.locale = locale
       end

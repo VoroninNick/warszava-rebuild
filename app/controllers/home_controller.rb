@@ -17,6 +17,8 @@ class HomeController < ApplicationController
 
     @articles = Article.where(published: 't').order('id desc').limit(2)
 
+    @articles_page = Page.find(6)
+
   end
 
   def test
@@ -32,11 +34,12 @@ class HomeController < ApplicationController
 
     require 'rails/generators'
 
-    Rails::Generators.invoke
+    #Rails::Generators.invoke('model', %w(MyGithubPage username:string) )
+    Rails::Generators.invoke("active_record:model", ['MyGithubPage', "list_order:string", "name:string"], {migration: true, timestamps: true})
 
    # include Rails::Generators
 
 
-    render inline: final_path
+    render inline: 'hello'
   end
 end

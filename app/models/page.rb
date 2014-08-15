@@ -14,7 +14,7 @@ class Page < ActiveRecord::Base
   attr_accessible :html_block_ids, :html_blocks
 
   after_save :reload_routes_after_save
-  #after_destroy :reload_routes_after_destroy
+  after_destroy :reload_routes_after_destroy
 
   def reload_routes_after_destroy
     DynamicRouter.reload
@@ -74,7 +74,13 @@ class Page < ActiveRecord::Base
       return "/articles/#{self.path}"
     end
 
-    "/#{self.path}"
+    p = self.path
+
+    "#{'/' if p[0] != '/'}#{p}"
+  end
+
+  def full_path_with_locale(locale = I18n.locale)
+    "/#{locale}#{self.full_path}"
   end
 
   rails_admin do

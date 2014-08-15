@@ -1,2 +1,15 @@
-<h1>Articles#list</h1>
-<p>Find me in app/views/articles/list.html.erb</p>
+<section id="wr" class="container">
+  <div id="bring-me-up">
+    <article id="news" class="row news-display">
+      <div class="s12" style="margin-bottom: 30px;">
+        <h1 class="br-h">
+          АНОНСИ
+        </h1>
+      </div>
+
+      <%= render partial: 'home/home_articles' %>
+    </article>
+
+    <%= render partial: 'partials/bottom_crown' %>
+  </div>
+</section>

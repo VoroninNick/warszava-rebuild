@@ -98,17 +98,27 @@
 
 </head>
 <body <%= request.env['HTTP_CACHE_CONTROL'] %> data="<%= request.env['HTTP_ACCEPT_ENCODING'] %>">
+<style>
+  .lang-row .lang{
+      float: left;
+      z-index: 2;
+      position: relative;
+  }
+</style>
   <%# cms_toolbar %>
   <div class="browser-shadow-me"></div>
   <div class="lang-bar container" >
 
     <div class="row ">
       <div class="s3 lang-row">
-    <div id="ukr" data="language-selector">
-      <%= image_tag("ws-flag-ua.png", :alt => "Україньска мова", :class => "lang-img-shrink", :onclick => "set_ukr()") %>
+    <div id="ukr" class="lang" data="language-selector">
+      <%= link_to_if((params[:locale] != 'uk'), image_tag("ws-flag-ua.png", :alt => "Україньска мова", :class => "lang-img-shrink", :onclick => ""), "#{url_for(locale: :uk)}") %>
     </div>
-    <div id="eng" data="language-selector">
-      <%= image_tag("ws-flag-uk.png", :alt => "English language", :class => "lang-img-shrink", :onclick => "set_eng()") %>
+    <div id="eng" class="lang" data="language-selector">
+      <%= link_to_if((params[:locale] != 'en'), image_tag("ws-flag-uk.png", :alt => "English language", :class => "lang-img-shrink", :onclick => ""), "#{url_for(locale: :en)}") %>
+    </div>
+    <div id="pl" class="lang" data="language-selector">
+      <%= link_to_if((params[:locale] != 'pl'), image_tag("ws-flag-uk.png", :alt => "Polish language", :class => "lang-img-shrink", :onclick => ""), "#{url_for(locale: :pl)}") %>
     </div>
     </div>
     </div>
