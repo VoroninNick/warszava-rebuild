@@ -20,16 +20,19 @@ class HomeController < ApplicationController
   end
 
   def test
-    file = Gem.loaded_specs['railties'].gem_dir.split('/')
-    file = file.first(file.count - 3).join('/')
-    rails_root = Rails.root
-    rails_root_path_arr = rails_root.to_s.split('/')
-    rails_root_path_length = rails_root_path_arr.count
-    root_path =  ( "/.." * (rails_root_path_length - 1) )
-    final_path = ".#{root_path}#{file}"
-    require  final_path + '/rails.rb'
-    require final_path + "/rails/generators/actions.rb"
-    Rails::Generators.invocke
+    # file = Gem.loaded_specs['railties'].gem_dir.split('/')
+    # file = file.first(file.count - 0).join('/')
+    # rails_root = Rails.root
+    # rails_root_path_arr = rails_root.to_s.split('/')
+    # rails_root_path_length = rails_root_path_arr.count
+    # root_path =  ( "/.." * (rails_root_path_length - 1) )
+    # final_path = ".#{root_path}#{file}/lib"
+    # require  final_path + '/rails.rb'
+    # require final_path + "/rails/generators/actions.rb"
+
+    require 'rails/generators'
+
+    Rails::Generators.invoke
 
    # include Rails::Generators
 
