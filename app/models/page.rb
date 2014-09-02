@@ -20,16 +20,16 @@ class Page < ActiveRecord::Base
     DynamicRouter.reload
   end
 
-  attr_accessible :published
+  attr_accessible :published?
 
-  def published
-    (custom_page.nil?)? true : ( custom_page.respond_to?(:published) && custom_page.published == true )
+  def published?
+    (custom_page.nil?)? true : ( custom_page.respond_to?(:published?) && custom_page.published == true )
   end
 
   def reload_routes_after_save
 
     counter = 0
-    if (new_record? || controller_changed? || action_changed?) && self.published
+    if (new_record? || controller_changed? || action_changed?) && self.published?
       counter = 1
     else
       self.translations.each do |t|

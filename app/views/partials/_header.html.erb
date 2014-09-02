@@ -104,6 +104,11 @@
       z-index: 2;
       position: relative;
   }
+
+  .lang-row .lang#pl{
+      top: -8px;
+      padding: 0 2.5px;
+  }
 </style>
   <%# cms_toolbar %>
   <div class="browser-shadow-me"></div>
@@ -112,13 +117,13 @@
     <div class="row ">
       <div class="s3 lang-row">
     <div id="ukr" class="lang" data="language-selector">
-      <%= link_to_if((params[:locale] != 'uk'), image_tag("ws-flag-ua.png", :alt => "Україньска мова", :class => "lang-img-shrink", :onclick => ""), "#{url_for(locale: :uk)}") %>
+      <%= link_to_if((params[:locale] != 'uk'), image_tag("lang-uk.png", :alt => "Україньска мова", :class => "lang-img-shrink", :onclick => ""), "#{url_for(locale: :uk)}") %>
     </div>
     <div id="eng" class="lang" data="language-selector">
-      <%= link_to_if((params[:locale] != 'en'), image_tag("ws-flag-uk.png", :alt => "English language", :class => "lang-img-shrink", :onclick => ""), "#{url_for(locale: :en)}") %>
+      <%= link_to_if((params[:locale] != 'en'), image_tag("lang-en.png", :alt => "English language", :class => "lang-img-shrink", :onclick => ""), "#{url_for(locale: :en)}") %>
     </div>
     <div id="pl" class="lang" data="language-selector">
-      <%= link_to_if((params[:locale] != 'pl'), image_tag("ws-flag-uk.png", :alt => "Polish language", :class => "lang-img-shrink", :onclick => ""), "#{url_for(locale: :pl)}") %>
+      <%= link_to_if((params[:locale] != 'pl'), image_tag("lang-pl.png", :alt => "Polish language", :class => "lang-img-shrink", :onclick => ""), "#{url_for(locale: :pl)}") %>
     </div>
     </div>
     </div>

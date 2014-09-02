@@ -1,2 +1,37 @@
-<h1>Articles#item</h1>
-<p>Find me in app/views/articles/item.html.erb</p>
+<style>
+  .related-articles{
+      margin-top: 4rem;
+  }
+</style>
+<%# render :partial => "partials/header" %>
+<section id="wr" class="container">
+  <div id="bring-me-up">
+    <article id="news" class="row news-display">
+      <%# container :news_item %>
+
+      <div class="s5">
+        <%= image_tag @article.avatar.avatar.url %>
+      </div>
+      <div class="s7">
+        <%= raw @article.description %>
+      </div>
+    </article>
+
+    <div class="related-articles">
+      <div class="s12">
+        <h2 class="br-h">Читайте також</h2>
+      </div>
+
+        <%= render partial: 'home/home_articles' %>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="clearfix"></div>
+
+  <div class="push-crown row">
+    <div class="s5 br-h">&nbsp;</div>
+    <div class="s2" style="text-align: center;"><%= image_tag("crown-end.png") %></div>
+    <div class="s5 br-h crown-last-width">&nbsp;</div>
+  </div>
+</section>
+<%# render :partial => "partials/footer" %>

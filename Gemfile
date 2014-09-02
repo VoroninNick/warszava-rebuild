@@ -62,3 +62,6 @@ gem 'ancestry'
 gem 'fancybox2-rails'
 #gem 'jcarousel-rails', github: 'dmgarland/jcarousel-rails'
 #gem 'jcarousel_fu', github: 'patricksrobertson/jcarousel_fu'
+
+gem 'acts-as-taggable-on'
+gem 'rails_admin_tag_list', github: 'VoroninNick/rails_admin_tag_list', branch: 'pasha'

@@ -16,6 +16,11 @@ class AboutPageGalleryImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  def custom_rename
+    #HomeGalleryImage.all.each {|item| FileUtils.mv(item.image.file.file, "#{item.image.file.file}.jpg") if File.exist?(item.image.path); ion_name| FileUtils.mv(item.image.versions[version_name].path, "#{item.image.versions[version_name].path}.jpg") if File.exist?(item.image.versions[version_name].path) }; ActiveRecord::Base.connection.execute("update #{item.class.table_name} set image= \"#{item['image']}.jpg\" where id=#{item.id}") }
+    ServiceGalleryImage.all.each {|item| FileUtils.mv(item.image.file.file, "#{item.image.file.file}.jpg") if File.exist?(item.image.path); item.image.versions.keys.each {|version_name| FileUtils.mv(item.image.versions[version_name].path, "#{item.image.versions[version_name].path}.jpg") if File.exist?(item.image.versions[version_name].path) }; ActiveRecord::Base.connection.execute("update #{item.class.table_name} set image= \"#{item['image']}.jpg\" where id=#{item.id}") }
+  end
+
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:

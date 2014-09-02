@@ -3,7 +3,7 @@ class DynamicRouter
     WarszawaHotel::Application.routes.draw do
       #scope "(:locale)" do
       Page.all.each do |page|
-        if !page.published
+        if !page.published?
           next
         end
         #puts "Routing #{pg.name}"
@@ -11,6 +11,8 @@ class DynamicRouter
         if (page.controller && page.controller.length > 0) && (page.action && page.action.length > 0)
           to = "#{page.controller}##{page.action}"
         end
+
+
 
         page.translations_by_locale.keys.each do |locale|
           I18n.with_locale locale do

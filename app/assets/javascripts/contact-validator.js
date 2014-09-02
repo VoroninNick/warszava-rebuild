@@ -7,8 +7,8 @@
     
 
  
-    $("#btn-submit").click(function() {  
- 
+    $("#btn-submit").click(function(event) {
+        event.preventDefault()
         $(".error").hide();
         var hasError = false;
         var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
@@ -64,14 +64,23 @@
 
 
         if(hasError == true) { 
-            return false; 
+            //return false;
         }else{
-            var date = new Date();
-            date.setTime(date.getTime() + (1 * 60 * 1000));
-            var expiry = {seconds:25};
-            $.cookie( 'e_mails', '1', { expires: expiry } );
-            $("#contact-form").hide();
+            //var date = new Date();
+            //date.setTime(date.getTime() + (1 * 60 * 1000));
+            //var expiry = {seconds:25*60};
+            //$.cookie( 'e_mails', '1', { expires: expiry } );
 
+            $("#contact-form-section").hide();
+            var $contact_form = $('#contact-form').find('form')
+            data = $contact_form.serializeArray()
+            var target_url = $contact_form.attr('action') + '?ajax=true'
+            $.post(target_url, data,
+                function(){
+                    console.log('thanks for message')
+
+                })
+            //return false;
         }
  
     });

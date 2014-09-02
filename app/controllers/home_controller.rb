@@ -15,7 +15,7 @@ class HomeController < ApplicationController
 
     @home_page = Pages::HomePage.first
 
-    @articles = Article.where(published: 't').order('id desc').limit(2)
+    @articles = Article.where(published: 't').order('id desc').limit(4)
 
     @articles_page = Page.find(6)
 

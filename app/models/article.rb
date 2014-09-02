@@ -29,7 +29,7 @@ class Article < ActiveRecord::Base
       nested do
         field :locale, :hidden
         field :name
-        field :short_descr
+        field :short_descr, :text
         field :description
 
       end

@@ -1,0 +1,23 @@
+
+
+
+  <form accept-charset="UTF-8" action="<%= source_send_message_path(locale: I18n.locale) %>" class="new_email_message" id="new_email_message" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="be5zeUpB6NKop92TASWpqbckW32ZrMBdLTl38tV12ag=" /></div>
+    <input id="email_page_portlet_url" name="email_page_portlet_url" type="hidden" value="http://warszawa-hotel.com.ua/contact-us" />
+
+    <div class="s12 push-contact-us-form contact-inline-min">
+      <label for="Вас звати:">Вас звати:</label>
+      <input class="clear-contact-inputs s user-name contact-inline-min-inputs" id="UserName" name="email_message[user_name]" placeholder="Константин Константинопольскій" size="30" type="text" />
+      <label for="Ваш номер телефону:">Ваш номер телефону:</label>
+      <input class="clear-contact-inputs s user-phone contact-inline-min-inputs" id="UserPhone" name="email_message[user_phone]" placeholder="+38 (098) 511 77 73" size="30" type="text" />
+      <label for="Ваш e-mail:">Ваш e-mail:</label>
+      <input class="clear-contact-inputs s user-email contact-inline-min-inputs" id="UserEmail" name="email_message[user_mail]" placeholder="konstantin.kost@gmail.com" size="30" type="text" />
+
+    </div>
+    <div class="s12 push-contact-us-form contact-inline-min">
+      <label for="Текст Вашого повідомлення:">Текст Вашого повідомлення:</label>
+      <textarea class="clear-contact-inputs s contact-text width1200 width-standart" cols="40" id="UserMsg" name="email_message[user_msg]" placeholder="Ми піклуємося про те, щоб кожен гість отримав лише якісний та сучасний сервіс, що є для нас найкращою рекомендацією та компліментом." rows="20">
+      </textarea>
+    </div>
+    <div class="s12 submit-area"><input type="submit" name="" value="" class="submit-button" id="btn-submit"></div>
+  </form></div>
+

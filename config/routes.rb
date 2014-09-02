@@ -8,7 +8,7 @@ WarszawaHotel::Application.routes.draw do
   DynamicRouter.load
 
   scope "(:locale)" do
-
+    post '/order', to: 'contact#create_message', as: :source_send_message
 
     get 'about-hotel', to: 'about#hotel', as: :source_about_hotel
 

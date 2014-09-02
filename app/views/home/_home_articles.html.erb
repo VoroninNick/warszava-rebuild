@@ -4,19 +4,53 @@
       padding-top: 0;
       overflow: hidden;
   }
+
+  .article .article-short-description{
+      max-height: 80px;
+      overflow: hidden;
+  }
+
+  .article .article-title-link{
+
+  }
+
+  .article .article-title-link .article-title{
+    max-height: 27px;
+    overflow: hidden;
+  }
+
+  .article{
+      height: auto;
+      position: relative;
+
+      margin: 15px 0 15px 25px;
+  }
+
+  .article .more-link{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+  }
+
+
 </style>
 <% @articles.each do |item| %>
-    <div class="article s6 n-max <%= cycle("", "", "pad-n", "pad-n") %>" style="margin-top: 5px;">
+    <div class="article s6 n-max <%= cycle("", "", "pad-n", "pad-n") %>" >
       <% [item.avatar].each do |image| %>
           <%= link_to image_tag(image.url(:thumb), :class => "br f-l"), item.page.full_path_with_locale %>
       <% end %>
       <div class="pad-r">
-        <a href="<% item.page.full_path_with_locale %>" title="<%= item.name %>">
-          <h3 style="margin-top: -7px;"><%= item.name %></h3>
+        <a class="article-title-link" href="<%= item.page.full_path_with_locale %>" title="<%= item.name %>">
+          <h3 class="article-title" style="margin-top: -7px;"><%= item.name %></h3>
         </a>
         <%# @truncate_me = item.description.html_safe unless item.description.blank? %>
-        <i> <%= raw item.short_descr %> </i>
-        <%= link_to image_tag("h1-mr.png", :alt => ">"), "/articles/#{item.id}", :class => "f-r", :title => "#{item.name}", :style => "margin-top: 0px;" %>
+        <p class="article-short-description">
+          <i>
+            <%= raw item.short_descr %>
+          </i>
+        </p>
+
+        <%= link_to image_tag("h1-mr.png", :alt => ">"), "#{item.page.full_path_with_locale}", :class => "f-r more-link", :title => "#{item.name}", :style => "margin-top: 0px;" %>
       </div><!-- class:pad-r -->
     </div><!-- class:s6 n-max -->
 <% end %>
