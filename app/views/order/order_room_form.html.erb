@@ -1,0 +1,77 @@
+<!--<form action="<%# order_room_path %>" method="post"  >-->
+  <!--<%# hidden_field_tag :email_page_portlet_url, @email_page_portlet_url %>-->
+  <!--<%# f.cms_error_messages %>-->
+  <!--<div class="s12 push-contact-us-form contact-inline-min">-->
+    <!--<label for="Вас звати:">Вас звати:</label>-->
+    <!--<input type="text" name="name" placeholder="Константин Константинопольскій" id="UserName" class="clear-contact-inputs s user-name contact-inline-min-inputs" />-->
+    <!--<label for="Ваш номер телефону:">Ваш номер телефону:</label>-->
+    <!--<input type="text" name="phone" placeholder="+38 (098) 511 77 73" id="UserPhone" class="clear-contact-inputs s user-phone contact-inline-min-inputs" />-->
+    <!--<label for="Ваш e-mail:">Ваш e-mail:</label>-->
+    <!--<input type="text" name="email" placeholder="konstantin.kost@gmail.com" id="UserEmail" class="clear-contact-inputs s user-email contact-inline-min-inputs" />-->
+
+  <!--</div>-->
+  <!--<div class="s12 push-contact-us-form contact-inline-min">-->
+    <!--<label for="Текст Вашого повідомлення:">Текст Вашого повідомлення:</label>-->
+    <!--<textarea name="message" placeholder="Ми піклуємося про те, щоб кожен гість отримав лише якісний та сучасний сервіс, що є для нас найкращою рекомендацією та компліментом." id="UserMsg" class="clear-contact-inputs s contact-text width1200 width-standart" />-->
+  <!--</div>-->
+  <!--<div class="s12 submit-area"><input type="submit" name="" value="" class="submit-button" id="btn-submit"></div>-->
+<!--</form>-->
+
+<style>
+  body{
+      padding: 0;
+      margin: 0;
+      background: url("/assets/main-bg-pattern-1.jpg") repeat transparent;
+  }
+  #form-section{
+      height: 400px;
+      overflow: hidden;
+      margin: 0;
+  }
+
+  #room-order-form{
+      margin: 0;
+  }
+
+  .contact-inline-min{
+      width: 340px !important;
+  }
+
+  .contact-inline-min.message{
+      width: 780px !important;
+  }
+
+  #form-section #msg-header{
+      padding-top: 0;
+  }
+
+
+  input, textarea{
+      max-width: 100%;
+  }
+
+</style>
+<div id="form-section">
+<div class="s12" id="msg-header"><h2 class="contact-h1-second">Замовлення номеру</h2></div>
+<div class="clearfix"></div>
+<%= form_for @order_room_form_object, :url => order_room_path, :method=>'post', html: {id: 'room-order-form'} do |f| %>
+    <%# hidden_field_tag :email_page_portlet_url, @email_page_portlet_url %>
+    <%# f.cms_error_messages %>
+    <div class="s12 push-contact-us-form contact-inline-min">
+      <label for="Вас звати:">Вас звати:</label>
+      <%= f.text_field :name, :placeholder => "Константин Константинопольскій", :id => "UserName", :class => "clear-contact-inputs s user-name contact-inline-min-inputs" %>
+      <label for="Ваш номер телефону:">Ваш номер телефону:</label>
+      <%= f.text_field :phone, :placeholder => "+38 (098) 511 77 73", :id => "UserPhone", :class => "clear-contact-inputs s user-phone contact-inline-min-inputs" %>
+      <label for="Ваш e-mail:">Ваш e-mail:</label>
+      <%= f.text_field :email, :placeholder => "konstantin.kost@gmail.com", :id => "UserEmail", :class => "clear-contact-inputs s user-email contact-inline-min-inputs" %>
+
+    </div>
+    <div class="s12 push-contact-us-form contact-inline-min message">
+      <label for="Текст Вашого повідомлення:">Текст Вашого повідомлення:</label>
+      <%= f.text_area :message, :placeholder => "Ми піклуємося про те, щоб кожен гість отримав лише якісний та сучасний сервіс, що є для нас найкращою рекомендацією та компліментом.", :id => "UserMsg", :class => "clear-contact-inputs s contact-text width1200 width-standart" %>
+    </div>
+    <div class="s12 submit-area"><input type="submit" name="" value="" class="submit-button" id="btn-submit"></div>
+<% end %>
+</div>
+
+<script type="text/javascript" src="/assets/contact-validator.js"></script>

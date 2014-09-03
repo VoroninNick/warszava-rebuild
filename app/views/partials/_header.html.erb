@@ -99,6 +99,12 @@
 </head>
 <body <%= request.env['HTTP_CACHE_CONTROL'] %> data="<%= request.env['HTTP_ACCEPT_ENCODING'] %>">
 <style>
+  .lang-row{
+      float: right;
+      margin-left: 0 !important;
+      margin-right: -5px;
+  }
+
   .lang-row .lang{
       float: left;
       z-index: 2;
@@ -109,6 +115,13 @@
       top: -8px;
       padding: 0 2.5px;
   }
+
+  .lg{
+      top: -5px;
+      position: relative;
+  }
+
+
 </style>
   <%# cms_toolbar %>
   <div class="browser-shadow-me"></div>
@@ -143,6 +156,7 @@
     </div>
     <div class="row">
       <nav class="of3 s9 nav-max">
+
         <% if main_menu && main_menu.menu_items.count > 0 %>
         <ul>
           <% main_menu_obj = main_menu %>

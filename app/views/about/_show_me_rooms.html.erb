@@ -8,16 +8,19 @@
         });
 
         $(".order a").fancybox({
-            maxWidth  : 640,
+            //maxWidth  : 1195, // 640
             maxHeight : 820,
             fitToView : false,
-            width   : '70%',
+            //width   : '70%',
             height    : '100%',
             autoSize  : false,
             closeClick  : false,
             openEffect  : 'none',
             closeEffect : 'none',
-            padding: 0
+            padding: 0,
+            beforeShow : function(){
+                $(".fancybox-wrap").addClass("room-form-popup");
+            }
         });
     });
 </script>
@@ -41,6 +44,33 @@
     .order a:hover{
         border-bottom: 1px solid rgba(91, 44, 22, 1);
     }
+
+    .room-form-popup.fancybox-wrap{
+        max-width: 1195px;
+        width: 70% !important;
+        max-height: 100%;
+        height: 412px !important;
+
+    }
+
+    .fancybox-wrap{
+        overflow: visible !important;
+    }
+
+    .room-form-popup .fancybox-inner{
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .room-form-popup .fancybox-skin, .room-form-popup .fancybox-outer{
+        height: 100%;
+    }
+
+    .room-form-popup .fancybox-iframe{
+        height: 100% !important;
+        width: 100% !important;
+        border: 6px white solid;
+    }
 </style>
 
 <% @rooms.each do |item| %>
@@ -63,7 +93,7 @@
         <% end %>
 
         <div class="order">
-          <a data-fancybox-type="iframe" href="http://warszawa-hotel.com.ua:6060/order">Замовити</a>
+          <a data-fancybox-type="iframe" href="<%= order_room_form_path(id: item.id, locale: I18n.locale) %>">Замовити</a>
         </div>
       </div>
       <!-- SHOW ME UP IF IM SMALL -->

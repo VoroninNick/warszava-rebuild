@@ -17,7 +17,7 @@
         <% end %>
 
         <div class="order">
-          <a data-fancybox-type="iframe" href="http://warszawa-hotel.com.ua:6060/order">Замовити</a>
+          <a data-fancybox-type="iframe" href="<%= order_room_form_path(id: item.id, locale: I18n.locale) %>">Замовити</a>
         </div>
       </div>
       <!-- SHOW ME UP IF IM SMALL -->

@@ -25,15 +25,149 @@
         -webkit-animation: bullet-<%= index+1 %> <%= home_banner_images.count * 8 %>s infinite <%= -2 + index*8 %>s linear;
     }
     <% end %>
+
+    #home-banner-wrapper{
+        overflow: visible;
+        position: relative;
+        border: 6px solid white;
+        height: 476px;
+    }
+
+    #home-banner ul.slides{
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        
+        height: 464px;
+    }
+
+    #home-banner ul.slides li.slide{
+        width: 1128px;
+        top: -50px;
+    }
+
+    #home-banner-wrapper ul.bullets{
+        clear: left;
+        top: 15px;
+        position: relative;
+    }
+
+
+    #slider-description{
+        width: 34%;
+        right: 0;
+        height: 100%;
+
+        color: #f5ede2;
+        padding-top: 2rem;
+        transition: 0.4s width;
+        overflow: hidden;
+        z-index: 10;
+        position: absolute;
+        top: 0;
+
+        background: url('/assets/wz-bg-banner-1.gif')no-repeat center center;
+
+        -webkit-background-size: cover !important;
+        -moz-background-size: cover !important;
+        -o-background-size: cover !important;
+        background-size: cover !important;
+    }
+
+    #slider-description ul.phones{
+        list-style: none;
+
+
+    }
+
+    #slider-description ul.phones li{
+        text-align: left;
+    }
+
+    #slider-description ul.phones li .phone-number{
+        font-size: 1.2rem;
+        line-height: 2rem;
+        font-weight: 700;
+    }
+
+    #slider-description ul.phones li .label{
+        color: #a87711;
+        background: transparent;
+        vertical-align: super;
+    }
+
+    #slider-description p{
+        text-align: left;
+        margin-left: 2rem;
+        color: #f5ede2;
+    }
+
+    #slider-description .brand-button{
+        margin-top: 10rem;
+
+    }
+
+    #slider-description .description-content{
+        width: 384px;
+        height: 100%;
+    }
+
+    #description-checkbox{
+        display: none;
+    }
+
+    #hide-description{
+        position: absolute;
+        display: block;
+        top: 0;
+        bottom: 0;
+    }
+
+    #hide-description label{
+
+    }
+
+    #description-checkbox ~ #slider-description label{
+        position: absolute;
+        display: block;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0px !important;
+
+        color: #d8a21e;
+        font-size: 1.2rem;
+        font-weight: 900;
+
+        transition: 0.4s transform;
+    }
+
+    #description-checkbox:checked ~ #slider-description label{
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    #description-checkbox:checked ~ #slider-description{
+        width: 27px;
+    }
+
+    .slides-wrapper{
+
+    }
+
+
+
+
   </style>
 
-  <div  class="s12">
+  <div id="home-banner-wrapper" class="s12">
 
 
     <input checked="" type="radio" name="home-banner-radio" class="home-banner-radio" id="home-banner-radio-autoplay" />
+    <input type="checkbox" name="show-description-checkbox" id="description-checkbox" />
     <% home_banner_images.each_with_index do |image, index| %>
       <input type="radio" name="home-banner-radio" class="home-banner-radio" id="home-banner-radio-<%= (index+1).to_s %>" />
     <% end %>
+
+
 
     <ul class="slides">
         <% home_banner_images.each_with_index do |image, index| %>
@@ -42,6 +176,43 @@
             </li>
         <% end %>
     </ul>
+
+
+    <div id="slider-description">
+      <div id="hide-description">
+
+        <label id="hide" for="description-checkbox">&gt;&gt;</label>
+      </div>
+      <div class="description-content">
+
+
+      <ul class="phones">
+        <li>
+          <span class="phone-number">+38 (032) 224 53 35</span>
+          <span class="label">(Готель)</span>
+        </li>
+
+        <li>
+          <span class="phone-number">+38 (096) 274 53 16</span>
+          <span class="label">(Ресторан)</span>
+        </li>
+      </ul>
+
+      <p>
+        80383 Львівська обл.,<br/>
+        Жовківський район, с. Малехів,<br/>
+        вул. Жовкывська 1
+      </p>
+      <p>
+        49&deg; 48' 757"   Пн. Ш.<br/>
+        23&deg; 58' 671"   Сх. Д.
+      </p>
+
+
+        <a href="<%= source_about_rooms_path(locale: I18n.locale) %>" class="brand-button"><span>Бронювання</span></a>
+        </div>
+    </div>
+
 
     <ul class="bullets">
       <% home_banner_images.each_with_index do |image, index| %>

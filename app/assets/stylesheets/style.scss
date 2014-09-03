@@ -135,6 +135,12 @@ nav ul li{
   background-clip: padding-box;
 
 }
+
+nav ul li.active span{
+  display: block;
+  text-align: center;
+
+}
 nav ul li a,
 nav ul li a:hover,
 nav ul li a:active,
@@ -848,4 +854,41 @@ textarea{
 
 .s-italic p{
   font-style: italic !important;
+}
+
+.brand-button{
+  display: inline-block;
+  width: 237px;
+  height: 65px;
+
+  background-image: url(/assets/ws-button2014-1.png);
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 65px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.brand-button span{
+  font-size: 17px;
+  font-weight: 700;
+
+  background: #9b5212;
+  /* Old Browsers */
+  background: -moz-linear-gradient(-45deg, #9b5212 0%, #fee92e 38%, #fee820 64%, #985910 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, #9b5212), color-stop(38%, #fee92e), color-stop(64%, #fee820), color-stop(100%, #985910));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg, #9b5212 0%, #fee92e 38%, #fee820 64%, #985910 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg, #9b5212 0%, #fee92e 38%, #fee820 64%, #985910 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg, #9b5212 0%, #fee92e 38%, #fee820 64%, #985910 100%);
+  /* IE 10+ */
+  background: linear-gradient(135deg, #9b5212 0%, #fee92e 38%, #fee820 64%, #985910 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9b5212', endColorstr='#985910', GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

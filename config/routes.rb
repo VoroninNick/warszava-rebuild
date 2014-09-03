@@ -1,6 +1,8 @@
 WarszawaHotel::Application.routes.draw do
 
 
+  get 'order/order_room'
+
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -8,13 +10,16 @@ WarszawaHotel::Application.routes.draw do
   DynamicRouter.load
 
   scope "(:locale)" do
+    post "rooms/:id/order", to: 'order#order_room', as: :order_room
+    get "/rooms/:id/order", to: 'order#order_room_form', as: :order_room_form
+
     post '/order', to: 'contact#create_message', as: :source_send_message
 
-    get 'about-hotel', to: 'about#hotel', as: :source_about_hotel
+    get 'about-hotel', to: 'about#hotel', as: :source_about_hotel, defaults: {page_id: 5}
 
-    get 'rooms', to: 'about#rooms', as: :source_about_rooms
+    get 'rooms', to: 'about#rooms', as: :source_about_rooms, defaults: {page_id: 10}
 
-    get 'prices', to: 'about#prices', as: :source_about_prices
+    get 'prices', to: 'about#prices', as: :source_about_prices, defaults: {page_id: 11}
 
     get 'services', to: 'services#index', as: :source_services
 
