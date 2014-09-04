@@ -1,0 +1,28 @@
+uk:
+  pages:
+    rooms-list:
+      page-title: "Номери"
+      order-button:
+        label: "Замовити"
+
+    prices:
+      table:
+        columns:
+          room-category: "Категорія номеру"
+          quantity: "Кількість"
+          price: "Ціна за добу, грн."
+          extra-bed: "Додаткове ліжко, грн."
+        rows:
+          1:
+            room-category: "Двомісний стандартний з двома ліжками"
+          2:
+            room-category: "Двомісний стандартний"
+          3:
+            room-category: "Комфорт"
+          4:
+            room-category: "Напівлюкс"
+          5:
+            room-category: "Люкс"
+          6:
+            room-category: "Номер для молодят"
+

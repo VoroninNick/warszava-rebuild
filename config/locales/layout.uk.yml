@@ -1,0 +1,10 @@
+uk:
+  layout:
+    footer:
+      address: "Україна, Львівська обл, с. Малехів, вул. Жовківська, 1"
+      copyright: "© 2012 Готель-Ресторан «Варшава»"
+      developed-by:
+        handcrafted-in: "Зроблено"
+        voronin-design-studio: "дизайн студією М. Вороніна"
+        dot: ""
+        year: "в %{date} році."

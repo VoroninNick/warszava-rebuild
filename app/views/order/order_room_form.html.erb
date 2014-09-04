@@ -23,11 +23,17 @@
       margin: 0;
       background: url("/assets/main-bg-pattern-1.jpg") repeat transparent;
   }
-  #form-section{
-      height: 465px;
+  .form-section{
+      height: 470px;
       overflow: hidden;
       margin: 0;
   }
+
+  .form-section.specified-room-order-form-section{
+      height: 375px;
+  }
+
+
 
   #room-order-form{
       margin: 0;
@@ -42,10 +48,14 @@
   }
 
   .contact-inline-min.message textarea{
+      height: 280px;
+  }
+
+  .specified-room-order-form-section .contact-inline-min.message textarea{
       height: 203px;
   }
 
-  #form-section #msg-header{
+  .form-section #msg-header{
       padding-top: 0;
   }
 
@@ -69,23 +79,25 @@
 
   select{
       background: url("/assets/form-background_03.jpg") repeat transparent !important;
+
+      color: #555555;
+      display: inline-block;
+      font-size: 13px;
+      height: 18px;
+      line-height: 18px;
+      margin-bottom: 9px;
+      padding: 4px;
+
+      height: 46px !important;
+      border-radius: 5px !important;
+      padding-left: 10px !important;
+
+      max-width: 100%;
+      width: 910px;
   }
 
 </style>
-<div id="form-section<%= " specified-room-order-form-section" if @is_specified_room == true %>">
-  <% if !@is_specified_room %>
-  <div class="select-room-section">
-    <div class="s12" id="msg-header"><h2 class="contact-h1-second">Оберіть номер</h2></div>
-    <div class="clearfix"></div>
-    <div class="s12">
-    <select name="room">
-      <% @available_rooms.each do |room| %>
-        <option value="<%= room.id %>"><%= room.name %></option>
-      <% end %>
-    </select>
-    </div>
-  </div>
-  <% end %>
+<div class="form-section<%= " specified-room-order-form-section" if @is_specified_room == true %>">
 
 <div class="s12" id="msg-header"><h2 class="contact-h1-second">Замовлення номеру</h2></div>
 <div class="clearfix"></div>
@@ -93,6 +105,15 @@
     <%# hidden_field_tag :email_page_portlet_url, @email_page_portlet_url %>
     <%# f.cms_error_messages %>
     <div class="s12 push-contact-us-form contact-inline-min">
+      <% if !@is_specified_room %>
+          <label for="Вас звати:">Оберіть номер:</label>
+          <select name="room">
+            <option value="0">Виберіть номер зі списку</option>
+            <% @available_rooms.each do |room| %>
+                <option value="<%= room.id %>"><%= room.name %></option>
+            <% end %>
+          </select>
+      <% end %>
       <label for="Вас звати:">Вас звати:</label>
       <%= f.text_field :name, :placeholder => "Константин Константинопольскій", :id => "UserName", :class => "clear-contact-inputs s user-name contact-inline-min-inputs" %>
       <label for="Ваш номер телефону:">Ваш номер телефону:</label>
