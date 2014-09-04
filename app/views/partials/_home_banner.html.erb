@@ -1,3 +1,23 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#home-banner-wrapper a[data-fancybox-type]").fancybox({
+            //maxWidth  : 1195, // 640
+            maxHeight : 820,
+            fitToView : false,
+            //width   : '70%',
+            height    : '100%',
+            autoSize  : false,
+            closeClick  : false,
+            openEffect  : 'none',
+            closeEffect : 'none',
+            padding: 0,
+            beforeShow : function(){
+                $(".fancybox-wrap").addClass("room-form-popup");
+            }
+        });
+    });
+</script>
+
 <article id="home-banner" class="row">
   <% home_banner = @home_banners.first %>
   <% home_banner_images = home_banner.banner_images.first(3) %>
@@ -209,7 +229,7 @@
       </p>
 
 
-        <a href="<%= source_about_rooms_path(locale: I18n.locale) %>" class="brand-button"><span>Бронювання</span></a>
+        <a data-fancybox-type="iframe" href="<%= order_room_form_path(locale: I18n.locale) %>" class="brand-button"><span>Бронювання</span></a>
         </div>
     </div>
 

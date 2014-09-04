@@ -24,7 +24,7 @@
       background: url("/assets/main-bg-pattern-1.jpg") repeat transparent;
   }
   #form-section{
-      height: 400px;
+      height: 465px;
       overflow: hidden;
       margin: 0;
   }
@@ -38,7 +38,11 @@
   }
 
   .contact-inline-min.message{
-      width: 780px !important;
+      width: 768px !important;
+  }
+
+  .contact-inline-min.message textarea{
+      height: 203px;
   }
 
   #form-section #msg-header{
@@ -50,11 +54,42 @@
       max-width: 100%;
   }
 
+  .submit-area{
+      width: 100%;
+      padding: 0 25px;
+      margin: 0;
+  }
+
+  .submit-area input{
+      margin: 0;
+      padding: 0 !important;
+      right: -9px;
+      position: relative;
+  }
+
+  select{
+      background: url("/assets/form-background_03.jpg") repeat transparent !important;
+  }
+
 </style>
-<div id="form-section">
+<div id="form-section<%= " specified-room-order-form-section" if @is_specified_room == true %>">
+  <% if !@is_specified_room %>
+  <div class="select-room-section">
+    <div class="s12" id="msg-header"><h2 class="contact-h1-second">Оберіть номер</h2></div>
+    <div class="clearfix"></div>
+    <div class="s12">
+    <select name="room">
+      <% @available_rooms.each do |room| %>
+        <option value="<%= room.id %>"><%= room.name %></option>
+      <% end %>
+    </select>
+    </div>
+  </div>
+  <% end %>
+
 <div class="s12" id="msg-header"><h2 class="contact-h1-second">Замовлення номеру</h2></div>
 <div class="clearfix"></div>
-<%= form_for @order_room_form_object, :url => order_room_path, :method=>'post', html: {id: 'room-order-form'} do |f| %>
+<%= form_for @order_room_form_object, :url => order_room_path, :method=>'post', html: {id: 'room-order-form', class: "room-order-form#{" specified-room-order-form" if @is_specified_room == true}"} do |f| %>
     <%# hidden_field_tag :email_page_portlet_url, @email_page_portlet_url %>
     <%# f.cms_error_messages %>
     <div class="s12 push-contact-us-form contact-inline-min">
@@ -70,7 +105,14 @@
       <label for="Текст Вашого повідомлення:">Текст Вашого повідомлення:</label>
       <%= f.text_area :message, :placeholder => "Ми піклуємося про те, щоб кожен гість отримав лише якісний та сучасний сервіс, що є для нас найкращою рекомендацією та компліментом.", :id => "UserMsg", :class => "clear-contact-inputs s contact-text width1200 width-standart" %>
     </div>
-    <div class="s12 submit-area"><input type="submit" name="" value="" class="submit-button" id="btn-submit"></div>
+    <div class="s12 submit-area">
+      <!--<input type="submit" name="" value="" class="submit-button" id="btn-submit">-->
+      <span class="brand-button brand-button-submit">
+        <span class="button-label">Замовити</span>
+        <input type="submit" name="submit" value="" class="submit-button" id="btn-submit">
+
+      </span>
+    </div>
 <% end %>
 </div>
 

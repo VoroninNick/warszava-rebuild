@@ -21,6 +21,12 @@ class HomeGalleryImageUploader < CarrierWave::Uploader::Base
     HomeGalleryImage.all.each {|item| FileUtils.mv(item.image.file.file, "#{item.image.file.file}.jpg") if File.exist?(item.image.path); item.image.versions.keys.each {|version_name| FileUtils.mv(item.image.versions[version_name].path, "#{item.image.versions[version_name].path}.jpg") if File.exist?(item.image.versions[version_name].path) }; ActiveRecord::Base.connection.execute("update #{item.class.table_name} set image= \"#{item['image']}.jpg\" where id=#{item.id}") }
   end
 
+  def custom_rename_on_server
+    HomeGalleryImage.all.each {|item| new_name = item.image.file.file; old_name = new_name[0, new_name.length - 4];  FileUtils.mv(old_name, new_name) if File.exist?(old_name); item.image.versions.keys.each {|version_name| version_new_file_name = item.image.versions[version_name].path; version_old_file_name = version_new_file_name[0, version_new_file_name.length - 4]; FileUtils.mv(version_old_file_name, version_new_file_name) if File.exist?(version_old_file_name) }; }
+    RoomGalleryImage.all.each {|item| new_name = item.image.file.file; old_name = new_name[0, new_name.length - 4];  FileUtils.mv(old_name, new_name) if File.exist?(old_name); item.image.versions.keys.each {|version_name| version_new_file_name = item.image.versions[version_name].path; version_old_file_name = version_new_file_name[0, version_new_file_name.length - 4]; FileUtils.mv(version_old_file_name, version_new_file_name) if File.exist?(version_old_file_name) }; }
+    ServiceGalleryImage.all.each {|item| new_name = item.image.file.file; old_name = new_name[0, new_name.length - 4];  FileUtils.mv(old_name, new_name) if File.exist?(old_name); item.image.versions.keys.each {|version_name| version_new_file_name = item.image.versions[version_name].path; version_old_file_name = version_new_file_name[0, version_new_file_name.length - 4]; FileUtils.mv(version_old_file_name, version_new_file_name) if File.exist?(version_old_file_name) }; }
+  end
+
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:

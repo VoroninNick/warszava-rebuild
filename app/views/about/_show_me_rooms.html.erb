@@ -30,10 +30,10 @@
         margin-bottom: 10px;
     }
     .order a{
-        font-size: 20px;
-        font-style: italic;
-        border-bottom: 1px solid rgba(91, 44, 22, 0);
-        text-decoration: none !important;
+        /*font-size: 20px;*/
+        /*font-style: italic;*/
+        /*border-bottom: 1px solid rgba(91, 44, 22, 0);*/
+        /*text-decoration: none !important;*/
         -webkit-transition: 0.35s ease-out all;
         -moz-transition: 0.35s ease-out all;
         -ms-transition: 0.35s ease-out all;
@@ -42,35 +42,10 @@
     }
 
     .order a:hover{
-        border-bottom: 1px solid rgba(91, 44, 22, 1);
+        /*border-bottom: 1px solid rgba(91, 44, 22, 1);*/
     }
 
-    .room-form-popup.fancybox-wrap{
-        max-width: 1195px;
-        width: 70% !important;
-        max-height: 100%;
-        height: 412px !important;
 
-    }
-
-    .fancybox-wrap{
-        overflow: visible !important;
-    }
-
-    .room-form-popup .fancybox-inner{
-        width: 100% !important;
-        height: 100% !important;
-    }
-
-    .room-form-popup .fancybox-skin, .room-form-popup .fancybox-outer{
-        height: 100%;
-    }
-
-    .room-form-popup .fancybox-iframe{
-        height: 100% !important;
-        width: 100% !important;
-        border: 6px white solid;
-    }
 </style>
 
 <% @rooms.each do |item| %>
@@ -93,7 +68,8 @@
         <% end %>
 
         <div class="order">
-          <a data-fancybox-type="iframe" href="<%= order_room_form_path(id: item.id, locale: I18n.locale) %>">Замовити</a>
+          <!--<a data-fancybox-type="iframe" href="<%# order_room_form_path(id: item.id, locale: I18n.locale) %>">Замовити</a>-->
+          <a data-fancybox-type="iframe" href="<%= order_specified_room_form_path(id: item.id, locale: I18n.locale) %>" class="brand-button"><span>Замовити</span></a>
         </div>
       </div>
       <!-- SHOW ME UP IF IM SMALL -->
