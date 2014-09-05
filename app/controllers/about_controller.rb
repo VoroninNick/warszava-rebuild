@@ -23,6 +23,7 @@ class AboutController < ApplicationController
 
     @rooms_page = Pages::RoomsList.first
     @rooms = Room.where(published: 't').order('id desc')
+
   end
 
   def prices

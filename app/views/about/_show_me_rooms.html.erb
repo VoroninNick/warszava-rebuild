@@ -18,8 +18,25 @@
             openEffect  : 'none',
             closeEffect : 'none',
             padding: 0,
-            beforeShow : function(){
+            afterLoad : function(obj1, obj2){
+                OBJ1 = obj1
+                OBJ2 = obj2
                 $(".fancybox-wrap").addClass("room-form-popup").addClass('specified-room-form-popup');
+
+                var $iframe = $('.fancybox-iframe')
+                var $body = $iframe.contents().find('body')
+                var $textarea = $body.find('textarea')
+                $textarea = $('#fancybox-content iframe').contents().find('textarea')
+                alert('hello: ' + $("textarea").attr('placeholder'))
+
+
+                MY_CONTENT = $iframe.contents().find('body')
+
+
+                $textarea.click(function(){
+                    $(this).css({backgroundColor: 'red'})
+                    console.log('hello')
+                })
             }
         });
     });

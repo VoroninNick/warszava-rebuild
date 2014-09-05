@@ -1,4 +1,5 @@
 class Service < ActiveRecord::Base
+  has_many :translations
   #acts_as_content_block
   #has_many_attachments :images, :styles => { :home => "216x90#", :miniser => "145x96#", :bigser => "420x279#", :last_img => "337x97#", :big => "800x600#", :thumb => "100x100#" }
 
@@ -6,7 +7,7 @@ class Service < ActiveRecord::Base
 
   attr_accessible :published, :deleted, :archived, :created_by, :updated_by, :version, :lock_version
 
-  translates :name, :short_description, :full_description
+  #translates :name, :short_description, :full_description
   accepts_nested_attributes_for :translations
   attr_accessible :translations, :translations_attributes
 
@@ -18,8 +19,19 @@ class Service < ActiveRecord::Base
   accepts_nested_attributes_for :service_gallery_images
   attr_accessible :service_gallery_images_attributes
 
-  class Translation
+  def self.restore
+    Service.all.each {|s|  s.translations.each {|t|   t.full_description = s.full_description; ActiveRecord::Base.connection.execute(("update ".encode('UTF-8')+ Service.translation_class.table_name.encode('UTF-8') + " set full_description=\"".encode('UTF-8') + s.full_description.encode('UTF-8') + "\" where id = ".encode('UTF-8') + t.id.to_s.encode('UTF-8')).encode('UTF-8') )  } }
+  end
+
+  def self.simple_restore
+    Service.all.each {|s|  s.translations.each {|t|   t.full_description = s.full_description; t.save  } }
+  end
+
+  class Translation < ActiveRecord::Base
+    self.table_name = "service_translations"
+
     attr_accessible :locale, :name, :short_description, :full_description
+    belongs_to :service
 
     rails_admin do
       edit do

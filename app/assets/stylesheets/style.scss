@@ -922,7 +922,7 @@ textarea{
 }
 
 .room-form-popup.specified-room-form-popup.fancybox-wrap{
-  height: 387px !important;
+  //height: 387px !important;
 }
 
 .fancybox-wrap{
@@ -942,4 +942,96 @@ textarea{
   height: 100% !important;
   width: 100% !important;
   border: 6px white solid;
+}
+
+
+.form-section{
+  height: 470px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.form-section.specified-room-order-form-section{
+  height: 375px;
+}
+
+
+
+#room-order-form{
+  margin: 0;
+}
+
+.contact-inline-min{
+  width: 340px !important;
+}
+
+.contact-inline-min.message{
+  width: 768px !important;
+}
+
+
+
+
+
+.contact-inline-min{
+  width: 340px !important;
+}
+
+.contact-inline-min.message{
+  width: 768px !important;
+}
+
+.contact-inline-min.message textarea{
+  height: 280px;
+}
+
+.specified-room-order-form-section .contact-inline-min.message textarea, .contact-form .contact-inline-min.message textarea{
+  height: 203px;
+}
+
+.contact-form .contact-inline-min.message textarea{
+  width: 100% !important;
+}
+
+
+.form-section #msg-header{
+  padding-top: 0;
+}
+
+
+input, textarea{
+  max-width: 100%;
+
+}
+
+.submit-area{
+  width: 100%;
+  padding: 0 25px;
+  margin: 0;
+}
+
+.submit-area input{
+  margin: 0;
+  padding: 0 !important;
+  right: -9px;
+  position: relative;
+}
+
+select{
+  background: url("/assets/form-background_03.jpg") repeat transparent !important;
+
+  color: #555555;
+  display: inline-block;
+  font-size: 13px;
+  height: 18px;
+  line-height: 18px;
+  margin-bottom: 9px;
+  padding: 4px;
+
+  height: 46px !important;
+  border-radius: 5px !important;
+  padding-left: 10px !important;
+
+  max-width: 100%;
+  width: 910px;
 }

@@ -1,9 +1,9 @@
     $(document).ready(function() {
     
-    if ($.cookie('e_mails') == 1) {
-        $("#contact-form").hide();
-        $('.contact-h1-second').after('<div class="succses"><h2>Дякуємо!</h2><p>Ваше повідомлення було успішно відправленно.</p></div>');
-    };
+//    if ($.cookie('e_mails') == 1) {
+//        $("#contact-form").hide();
+//        $('.contact-h1-second').after('<div class="succses"><h2>Дякуємо!</h2><p>Ваше повідомлення було успішно відправленно.</p></div>');
+//    };
     
 
  
