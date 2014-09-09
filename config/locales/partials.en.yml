@@ -1,0 +1,24 @@
+en:
+  partials:
+    form:
+      fields:
+        name:
+          placeholder: "Constantine Constantinopolitan"
+          label: "your name:"
+          error-message: "Please enter your name!"
+        phone:
+          label: "Your phone number:"
+          error-message: "Please Enter your phone!"
+          placeholder: "+38 (098) 511 77 73"
+        email:
+          label: "Twój e-mail:"
+          error-message: "please enter your email!"
+          placeholder: "konstantin.kost@gmail.com"
+        message:
+          label: "Your message:"
+          error-message: "Please enter your message!"
+          placeholder: "We care about every guest received a high-quality and modern service that is our best recommendation and compliment."
+        room:
+          label: "Select room:"
+          error-message: "please select room!"
+          null-text: "Please select room!"

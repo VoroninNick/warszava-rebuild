@@ -7,38 +7,38 @@
             prevEffect : 'fade'
         });
 
-        $(".order a").fancybox({
-            //maxWidth  : 1195, // 640
-            maxHeight : 820,
-            fitToView : false,
-            //width   : '70%',
-            height    : '100%',
-            autoSize  : false,
-            closeClick  : false,
-            openEffect  : 'none',
-            closeEffect : 'none',
-            padding: 0,
-            afterLoad : function(obj1, obj2){
-                OBJ1 = obj1
-                OBJ2 = obj2
-                $(".fancybox-wrap").addClass("room-form-popup").addClass('specified-room-form-popup');
-
-                var $iframe = $('.fancybox-iframe')
-                var $body = $iframe.contents().find('body')
-                var $textarea = $body.find('textarea')
-                $textarea = $('#fancybox-content iframe').contents().find('textarea')
-                alert('hello: ' + $("textarea").attr('placeholder'))
-
-
-                MY_CONTENT = $iframe.contents().find('body')
-
-
-                $textarea.click(function(){
-                    $(this).css({backgroundColor: 'red'})
-                    console.log('hello')
-                })
-            }
-        });
+//        $(".order a").fancybox({
+//            //maxWidth  : 1195, // 640
+//            maxHeight : 820,
+//            fitToView : false,
+//            //width   : '70%',
+//            height    : '100%',
+//            autoSize  : false,
+//            closeClick  : false,
+//            openEffect  : 'none',
+//            closeEffect : 'none',
+//            padding: 0,
+//            afterLoad : function(obj1, obj2){
+//                OBJ1 = obj1
+//                OBJ2 = obj2
+//                $(".fancybox-wrap").addClass("room-form-popup").addClass('specified-room-form-popup');
+//
+//                var $iframe = $('.fancybox-iframe')
+//                var $body = $iframe.contents().find('body')
+//                var $textarea = $body.find('textarea')
+//                $textarea = $('#fancybox-content iframe').contents().find('textarea')
+//                alert('hello: ' + $("textarea").attr('placeholder'))
+//
+//
+//                MY_CONTENT = $iframe.contents().find('body')
+//
+//
+//                $textarea.click(function(){
+//                    $(this).css({backgroundColor: 'red'})
+//                    console.log('hello')
+//                })
+//            }
+//        });
     });
 </script>
 <style>
@@ -86,7 +86,7 @@
 
         <div class="order">
           <!--<a data-fancybox-type="iframe" href="<%# order_room_form_path(id: item.id, locale: I18n.locale) %>">Замовити</a>-->
-          <a data-fancybox-type="iframe" href="<%= order_specified_room_form_path(id: item.id, locale: I18n.locale) %>" class="brand-button"><span>Замовити</span></a>
+          <a data-fancybox-type="iframe" data-room-id="<%= item.id %>" href="<%= order_specified_room_form_path(id: item.id, locale: I18n.locale) %>" class="brand-button modal-link"><span>Замовити</span></a>
         </div>
       </div>
       <!-- SHOW ME UP IF IM SMALL -->

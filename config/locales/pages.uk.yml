@@ -26,3 +26,25 @@ uk:
           6:
             room-category: "Номер для молодят"
 
+
+
+    contact:
+      page-title: "Контактна інформація"
+      info:
+        headers:
+          address: 'Адреса:'
+          gps: 'Координати GPS:'
+          phone: 'Телефон:'
+        address: "80383 Львівська обл., <br>Жовківський район, <br>с. Малехів, <br>вул. Жовківська 1 <br>"
+        gps: "%{deg1}° %{min1}′ %{submin1}″ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Пн.Ш. <br>%{deg2}° %{min2}′ %{submin2}″ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Сх.Д."
+
+        phone-labels:
+          hotel: "готель"
+          restaurant: "ресторан"
+
+      form-section:
+        title: "залиште повідомлення"
+
+
+
+

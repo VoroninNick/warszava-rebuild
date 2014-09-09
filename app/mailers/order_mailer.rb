@@ -7,6 +7,11 @@ class OrderMailer < ActionMailer::Base
     order_form = FormConfig.first
     receivers = order_form.receiver_list
     @order = order
-    mail(to: receivers, template_name: 'mailers/order_mailer/message', template_path: '')
+
+    template_name = "mailers/order_mailer/message"
+    template_name = "mailers/order_mailer/room" if @order.is_a?(RoomOrder)
+
+
+    mail(to: receivers, template_name: template_name, template_path: '')
   end
 end

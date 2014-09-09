@@ -6,5 +6,11 @@ uk:
       developed-by:
         handcrafted-in: "Зроблено"
         voronin-design-studio: "дизайн студією М. Вороніна"
+        voronin-design-studio-link-title: "дизайн студія М. Вороніна"
         dot: ""
         year: "в %{date} році."
+
+        site-info:
+          link:
+            title: "Інформація про сайт"
+            text: "Інформація про сайт"

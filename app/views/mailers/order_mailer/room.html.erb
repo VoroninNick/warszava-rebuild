@@ -1,0 +1,32 @@
+<h1>Варшава Готель повідомлення</h1>
+<table border="1">
+  <tr>
+    <td>name</td>
+    <td><%= @order.name %></td>
+  </tr>
+  <tr>
+    <td>phone</td>
+    <td><%= @order.phone %></td>
+  </tr>
+  <tr>
+    <td>email</td>
+    <td><%= @order.email %></td>
+  </tr>
+  <% if @order.room %>
+  <tr>
+    <td>room</td>
+    <td><%= @order.room.name %></td>
+  </tr>
+  <% end %>
+  <tr>
+    <td>message</td>
+    <td><%= @order.message %></td>
+  </tr>
+
+  <tr>
+    <td>
+      link
+    </td>
+    <td><a href="<%= @host %>">record in admin panel</a></td>
+  </tr>
+</table>

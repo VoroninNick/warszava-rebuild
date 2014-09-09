@@ -5,17 +5,17 @@
     <input id="email_page_portlet_url" name="email_page_portlet_url" type="hidden" value="http://warszawa-hotel.com.ua/contact-us" />
 
     <div class="s12 push-contact-us-form contact-inline-min">
-      <label for="Вас звати:">Вас звати:</label>
-      <input class="clear-contact-inputs s user-name contact-inline-min-inputs" id="UserName" name="email_message[user_name]" placeholder="Константин Константинопольскій" size="30" type="text" />
-      <label for="Ваш номер телефону:">Ваш номер телефону:</label>
-      <input class="clear-contact-inputs s user-phone contact-inline-min-inputs" id="UserPhone" name="email_message[user_phone]" placeholder="+38 (098) 511 77 73" size="30" type="text" />
-      <label for="Ваш e-mail:">Ваш e-mail:</label>
-      <input class="clear-contact-inputs s user-email contact-inline-min-inputs" id="UserEmail" name="email_message[user_mail]" placeholder="konstantin.kost@gmail.com" size="30" type="text" />
+      <label for="Вас звати:"><%= t('partials.form.fields.name.label') %></label>
+      <input data-error-message="<%= t('partials.form.fields.name.error-message') %>" class="clear-contact-inputs s user-name contact-inline-min-inputs" id="UserName" name="email_message[user_name]" placeholder="<%= t('partials.form.fields.name.placeholder') %>" size="30" type="text" />
+      <label for="Ваш номер телефону:"><%= t('partials.form.fields.phone.label') %></label>
+      <input data-error-message="<%= t('partials.form.fields.phone.error-message') %>"  class="clear-contact-inputs s user-phone contact-inline-min-inputs" id="UserPhone" name="email_message[user_phone]" placeholder="<%= t('partials.form.fields.phone.placeholder') %>" size="30" type="text" />
+      <label for="Ваш e-mail:"><%= t('partials.form.fields.email.label') %></label>
+      <input data-error-message="<%= t('partials.form.fields.email.error-message') %>"  class="clear-contact-inputs s user-email contact-inline-min-inputs" id="UserEmail" name="email_message[user_mail]" placeholder="<%= t('partials.form.fields.email.placeholder') %>" size="30" type="text" />
 
     </div>
     <div class="s12 push-contact-us-form contact-inline-min message">
-      <label for="Текст Вашого повідомлення:">Текст Вашого повідомлення:</label>
-      <textarea class="clear-contact-inputs s contact-text width1200 width-standart" cols="40" id="UserMsg" name="email_message[user_msg]" placeholder="Ми піклуємося про те, щоб кожен гість отримав лише якісний та сучасний сервіс, що є для нас найкращою рекомендацією та компліментом." rows="20">
+      <label for="Текст Вашого повідомлення:"><%= t('partials.form.fields.message.label') %></label>
+      <textarea data-error-message="<%= t('partials.form.fields.message.error-message') %>" class="clear-contact-inputs s contact-text width1200 width-standart" cols="40" id="UserMsg" name="email_message[user_msg]" placeholder="<%= t('partials.form.fields.message.placeholder') %>" rows="20">
       </textarea>
     </div>
     <!--<div class="s12 submit-area"><input type="submit" name="" value="" class="submit-button" id="btn-submit"></div>-->

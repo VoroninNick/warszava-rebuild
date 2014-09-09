@@ -1,2 +1,16 @@
 pl:
   layout:
+    footer:
+      address: "Ukraina, Lwów Region, str. Malekhov ul. Zhovkivs'ka 1"
+      copyright: "© 2012 Hotel-Restauracja «Warszawa»"
+      developed-by:
+        handcrafted-in: "Wykonane"
+        voronin-design-studio: "studio projektowe M. Woronin "
+        voronin-design-studio-link-title: "studio projektowe M. Woronin "
+        dot: ""
+        year: "w %{date} roku."
+
+        site-info:
+          link:
+            title: "O tej stronie"
+            text: "O tej stronie"

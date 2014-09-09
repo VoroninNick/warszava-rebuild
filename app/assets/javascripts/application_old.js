@@ -23,4 +23,5 @@
 //= require jquery.flexslider-min
 //= require jquery.jcarousel.min
 //= require jquery.mousewheel-3.0.6.pack
+//= require modal
 

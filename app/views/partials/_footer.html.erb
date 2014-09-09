@@ -1,9 +1,9 @@
 <footer class="container" id="wide">
   <section class="row">
     <div class="s4 foot-line-up">
-      <p>&copy 2012 Готель-Ресторан «Варшава»</p>
+      <p><%= t('layout.footer.copyright') %></p>
       <p class="adress-mini">
-        Україна, Львівська обл, с. Малехів, вул. Жовківська, 1
+        <%= t('layout.footer.address') %>
       </p>
     </div>
 
@@ -24,13 +24,19 @@
     <div class="s4 vs-div foot-line-up">
       <%= image_tag("vs-logo.png", :alt => "") %>
       <p class="vs-studio">
-        Зроблено в <a class="vs-link" href="http://voroninstudio.eu/" title="дизайн студії Миколи Вороніна">дизайн студії Миколи Вороніна</a> 
-        <a class="vs-link" href="http://voroninstudio.eu/" title="Інформація про сайт">Інформація про сайт</a>
+        <%= t('layout.footer.developed-by.handcrafted-in') %>
+        <a class="vs-link" href="http://voroninstudio.eu/" title="<%= t('layout.footer.developed-by.voronin-design-studio-link-title') %>">
+          <%= t('layout.footer.developed-by.voronin-design-studio') %>
+        </a>
+        <%= t('layout.footer.developed-by.dot') %>
+        <br/>
+        <%= t('layout.footer.developed-by.year', date: 2014) %>
+        <a class="vs-link" href="http://voroninstudio.eu/" title="<%= t('layout.footer.developed-by.site-info.link.title') %>"><%= t('layout.footer.developed-by.site-info.link.text') %></a>
       </p>
     </div>
     <div class="s8 v-last foot-line-up adress-mini-hide-me-up">
       <p class="f-r">
-        Україна, Львівська обл, с. Малехів, вул. Жовківська, 1
+        <%= t('layout.footer.address') %>
       </p>
     </div>
   </section>
@@ -49,18 +55,18 @@
       </ul>
     </div>
     <div class="s12 align-r">
-      <p>&copy 2012 Готель-Ресторан «Варшава»</p>
+      <p><%= t('layout.footer.copyright') %></p>
     </div>
     <div class="s12 align-r">
       <p>
-        Україна, Львівська обл, с. Малехів, вул. Жовківська, 1
+        <%= t('layout.footer.address') %>
       </p>
     </div>
     <div class="s12 align-r">
       <%= image_tag("vs-logo.png", :alt => "") %>
-      <p class="">
-        Зроблено в <a class="vs-link" href="http://voroninstudio.eu/" title="дизайн студії Миколи Вороніна">дизайн студії Миколи Вороніна</a> 
-        <a class="vs-link" href="http://voroninstudio.eu/" title="Інформація про сайт">Інформація про сайт</a>
+      <p class="<%= I18n.locale %>">
+        <%= t('layout.footer.developed-by.handcrafted-in') %><a class="vs-link" href="http://voroninstudio.eu/" title="<%= t('layout.footer.developed-by.voronin-design-studio-link-title') %>"><%= t('layout.footer.developed-by.voronin-design-studio') %></a>
+        <a class="vs-link" href="http://voroninstudio.eu/" title="<%= t('layout.footer.developed-by.site-info.link.title') %>"><%= t('layout.footer.developed-by.site-info.link.text') %></a>
       </p>
     </div>
   </section>

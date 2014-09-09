@@ -18,48 +18,30 @@
         var nameVal = $("#UserName").val();
         var phoneaVal = $("#UserPhone").val();
         var msgVal = $("#UserMsg").val();
+        var msgErrorMessage = $('#UserMsg').attr('data-error-message')
+        var phoneErrorMessage = $('#UserPhone').attr('data-error-message')
+        var nameErrorMessage = $('#UserName').attr('data-error-message')
+        var emailErrorMessage = $('#UserEmail').attr('data-error-message')
 
-        if (nameVal == '' && emailaddressVal == '' && phoneaVal == '' && msgVal == ''){
-            $("#UserName").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">Введіть будь-ласка Ваше імя! </span>');
-            $("#UserEmail").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">Введіть будь-ласка Вашу поштову скриньку!</span>');
-            $("#UserPhone").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">Введіть будь-ласка Ваш телефон!</span>');
-            $("#UserMsg").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: left;color: #7c1616;">Введіть будь-ласка Ваше повідомлення!</span>');
+        if(nameVal == '') {
+            $("#UserName").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">'+nameErrorMessage+'</span>');
             hasError = true;
 
-        }else if(nameVal == '') {
-            $("#UserName").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">Введіть будь-ласка Ваше імя! </span>');
-            $("#UserEmail").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">Введіть будь-ласка Вашу поштову скриньку!</span>');
-            $("#UserPhone").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">Введіть будь-ласка Ваш телефон!</span>');
-            $("#UserMsg").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: left;color: #7c1616;">Введіть будь-ласка Ваше повідомлення!</span>');
+        }
+        if(emailaddressVal == '' || !emailReg.test(emailaddressVal)) {
+            $("#UserEmail").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">'+emailErrorMessage+'</span>');
             hasError = true;
 
-        }else if(emailaddressVal == '') {
-            $("#UserEmail").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">Введіть будь-ласка Вашу поштову скриньку!</span>');
-            $("#UserPhone").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">Введіть будь-ласка Ваш телефон!</span>');
-            $("#UserMsg").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: left;color: #7c1616;">Введіть будь-ласка Ваше повідомлення!</span>');
+        }
+        if(phoneaVal == '' || !phoneReg.test(phoneaVal)) {
+            $("#UserPhone").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">'+phoneErrorMessage+'</span>');
             hasError = true;
 
-        }else if(!emailReg.test(emailaddressVal)) {
-            $("#UserEmail").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">Перевірте будь-ласка поштову скриньку!</span>');
-            $("#UserPhone").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">Введіть будь-ласка Ваш телефон!</span>');
-            $("#UserMsg").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: left;color: #7c1616;">Введіть будь-ласка Ваше повідомлення!</span>');
-            hasError = true;
+        }
+        if(msgVal == '') {
 
-        }else if(phoneaVal == '') {
-            $("#UserPhone").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">Введіть будь-ласка Ваш телефон!</span>');
-            $("#UserMsg").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: left;color: #7c1616;">Введіть будь-ласка Ваше повідомлення!</span>');
+            $("#UserMsg").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: left;color: #7c1616;">'+msgErrorMessage+'</span>');
             hasError = true;
-
-        }else if(!phoneReg.test(phoneaVal)) {
-            $("#UserPhone").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">Введіть будь-ласка Ваш телефон!</span>');
-            $("#UserMsg").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: left;color: #7c1616;">Введіть будь-ласка Ваше повідомлення!</span>');
-            hasError = true;
-
-        }else if(msgVal == '') {
-            $("#UserMsg").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: left;color: #7c1616;">Введіть будь-ласка Ваше повідомлення!</span>');
-            hasError = true;
-        }else{
-            //hasError = false;
         }
 
 

@@ -1,2 +1,16 @@
 en:
   layout:
+    footer:
+      address: "Ukraine, Lviv Region, p. Malekhov str. Zhovkivs'ka 1"
+      copyright: "© 2012 Hotel-Restaurant «Warsaw»"
+      developed-by:
+        handcrafted-in: "Handcrafted in"
+        voronin-design-studio: "Voronin Design studio"
+        voronin-design-studio-link-title: "Voronin Design studio"
+        dot: "."
+        year: "%{date}."
+
+        site-info:
+          link:
+            title: "Site info"
+            text: "Site info"

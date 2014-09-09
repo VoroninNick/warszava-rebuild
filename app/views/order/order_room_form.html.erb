@@ -1,3 +1,4 @@
+<div id="order-form-wrapper">
 <!--<form action="<%# order_room_path %>" method="post"  >-->
   <!--<%# hidden_field_tag :email_page_portlet_url, @email_page_portlet_url %>-->
   <!--<%# f.cms_error_messages %>-->
@@ -18,7 +19,13 @@
 <!--</form>-->
 
 <style>
-  body{
+  /*body{
+      padding: 0;
+      margin: 0;
+      background: url("/assets/main-bg-pattern-1.jpg") repeat transparent;
+  }*/
+
+  #order-form-wrapper{
       padding: 0;
       margin: 0;
       background: url("/assets/main-bg-pattern-1.jpg") repeat transparent;
@@ -64,7 +71,7 @@
     <div class="s12 push-contact-us-form contact-inline-min">
       <% if true %>
           <label for="Вас звати:">Оберіть номер:</label>
-          <select name="room">
+          <select name="room_order[room]">
             <option value="0">Виберіть номер зі списку</option>
             <% @available_rooms.each do |room| %>
                 <option value="<%= room.id %>" <%= "selected" if @specified_room.respond_to?(:id) && room.id == @specified_room.id %> ><%= room.name %></option>
@@ -94,3 +101,4 @@
 <% end %>
 </div>
 
+</div>

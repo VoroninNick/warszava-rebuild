@@ -10,7 +10,7 @@ WarszawaHotel::Application.routes.draw do
   DynamicRouter.load
 
   scope "(:locale)" do
-    post "rooms/:id/order", to: 'order#order_room', as: :order_specified_room
+    match "rooms/:room_id/order", to: 'order#order_room', as: :order_specified_room, via: [:post, :get]
     get "/rooms/:id/order", to: 'order#order_room_form', as: :order_specified_room_form
 
     get "/rooms/order", to: 'order#order_room_form', as: :order_room_form

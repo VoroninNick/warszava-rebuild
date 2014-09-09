@@ -745,18 +745,15 @@
 
       <div class="s12 contact-float-right">
         <h2 class="contact-h1">
-          Контактна інформація
+          <%= t('pages.contact.page-title') %>
         </h2>
       </div>
       <div class="s4">
         <h3 class="h3-lineup-contact">
-          Адреса:
+          <%=  t('pages.contact.info.headers.address') %>
         </h3>
         <p class="street-line-1">
-          80383 Львівська обл., <br>
-          Жовківський район, <br>
-          с. Малехів, <br>
-          вул. Жовківська 1 <br>
+          <%= raw t('pages.contact.info.address') %>
         </p>
         <p class="street-line-2">
           <a href="mailto:warszawa-hotel@mail.ru">warszawa-hotel@mail.ru</a>
@@ -768,21 +765,20 @@
       </div>
       <div class="s4">
         <h3 class="h3-lineup-contact">
-          Координати GPS
+          <%= t('pages.contact.info.headers.gps') %>
         </h3>
         <p class="contact-gps-line">
-          49° 48′ 757″ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Пн.Ш. <br>
-          23° 58′ 671″ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Сх.Д.
+          <%= raw t("pages.contact.info.gps",  deg1: 49, min1: 48, submin1: 757, deg2: 23, min2: 58, submin2: 671) %>
         </p>
       </div>
       <div class="s4">
         <h3 class="h3-lineup-contact">
-          Телефон:
+          <%= t('pages.contact.info.headers.phone') %>
         </h3>
         <p class="phone-number">
-          +38 (032) 224 53 35 <i style="font-size: 65%;padding-left: 5px;color: rgb(92, 64, 31) !important;">(готель)</i><br>
-          +38 (098) 511 77 73 <i style="font-size: 65%;padding-left: 15px;color: rgb(92, 64, 31) !important;">(готель)</i><br>
-          +38 (096) 27 45 316 <i style="font-size: 65%;padding-left: 9px;color: rgb(92, 64, 31) !important;">(ресторан)</i><br>
+          +38 (032) 224 53 35 <i style="font-size: 65%;padding-left: 5px;color: rgb(92, 64, 31) !important;">(<%= t('pages.contact.info.phone-labels.hotel') %>)</i><br>
+          +38 (098) 511 77 73 <i style="font-size: 65%;padding-left: 15px;color: rgb(92, 64, 31) !important;">(<%= t('pages.contact.info.phone-labels.hotel') %>)</i><br>
+          +38 (096) 27 45 316 <i style="font-size: 65%;padding-left: 9px;color: rgb(92, 64, 31) !important;">(<%= t('pages.contact.info.phone-labels.restaurant') %>)</i><br>
           +38 (097) 01 70 947 <br>
           +38 (095) 93 93 835
         </p>
@@ -796,7 +792,7 @@
 
       <div id="contact-form-section">
 
-      <div class="s12" id="msg-header"><h2 class="contact-h1-second">залиште повідомлення</h2></div>
+      <div class="s12" id="msg-header"><h2 class="contact-h1-second"><%= t('pages.contact.form-section.title') %></h2></div>
       <div id="contact-form">
         <%# container :email_form %>
         <%= render partial: 'contact/form' %>
