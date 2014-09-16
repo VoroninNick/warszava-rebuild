@@ -11,6 +11,7 @@ en:
         year: "%{date}."
 
         site-info:
+          display: false
           link:
             title: "Site info"
             text: "Site info"

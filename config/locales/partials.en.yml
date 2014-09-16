@@ -22,3 +22,12 @@ en:
           label: "Select room:"
           error-message: "please select room!"
           null-text: "Please select room!"
+
+    phone-labels:
+      hotel: "hotel"
+      restaurant: "restaurant"
+
+    address: "80383 Lviv region., <br> Zhovkivsky area with. Malekhov, <br> str. Zhovkivs'ka 1"
+
+    reservation-button: "reservation"
+    contact-form-button: "send"

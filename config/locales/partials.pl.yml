@@ -22,3 +22,12 @@ pl:
           label: "Wybierz pokój:"
           error-message: "wybierz pokój!"
           null-text: "Wybierz pokój!"
+
+    phone-labels:
+      hotel: "hotel"
+      restaurant: "restauracja"
+
+    address: "80383 Lwów region., <br> Obszar Żowkiwskyj z. Malekhov,<br/> Obrazy ulicy. Zhovkivs'ka 1"
+
+    reservation-button: "rezerwacja"
+    contact-form-button: "wyślij"

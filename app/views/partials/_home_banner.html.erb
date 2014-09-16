@@ -123,7 +123,7 @@
     }
 
     #slider-description .brand-button{
-        margin-top: 10rem;
+        margin-top: 6rem;
 
     }
 
@@ -209,27 +209,24 @@
       <ul class="phones">
         <li>
           <span class="phone-number">+38 (032) 224 53 35</span>
-          <span class="label">(Готель)</span>
+          <span class="label">(<%= t('partials.phone-labels.hotel') %>)</span>
         </li>
 
         <li>
           <span class="phone-number">+38 (096) 274 53 16</span>
-          <span class="label">(Ресторан)</span>
+          <span class="label">(<%= t('partials.phone-labels.restaurant') %>)</span>
         </li>
       </ul>
 
       <p>
-        80383 Львівська обл.,<br/>
-        Жовківський район, с. Малехів,<br/>
-        вул. Жовкывська 1
+        <%= raw t('partials.address') %>
       </p>
       <p>
-        49&deg; 48' 757"   Пн. Ш.<br/>
-        23&deg; 58' 671"   Сх. Д.
+        <%= raw t('pages.home.banner.gps', deg1: 49, min1: 48, submin1: 757, deg2: 23, min2: 58, submin2: 671) %>
       </p>
 
 
-        <a  href="<%= order_room_form_path(locale: I18n.locale) %>" class="brand-button modal-link"><span>Бронювання</span></a>
+        <a  href="<%= order_room_form_path(locale: I18n.locale) %>" class="brand-button modal-link"><span><%= t('partials.reservation-button') %></span></a>
         </div>
     </div>
 

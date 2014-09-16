@@ -11,6 +11,7 @@ uk:
         year: "в %{date} році."
 
         site-info:
+          display: false
           link:
             title: "Інформація про сайт"
             text: "Інформація про сайт"

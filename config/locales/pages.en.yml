@@ -1,2 +1,61 @@
 en:
   pages:
+    rooms-list:
+      page-title: "Rooms"
+      order-button:
+        label: "Order"
+
+    home:
+      banner:
+
+        gps: "%{deg1}° %{min1}′ %{submin1}″ N <br>%{deg2}° %{min2}′ %{submin2}″ E"
+
+      services:
+        header: "SERVICES"
+      announces:
+        header: "ANNOUNCES"
+
+
+    about:
+      page-title: "Welcome to Hotel-Restaurant WARSAW"
+
+    prices:
+      table:
+        columns:
+          room-category: "room category"
+          quantity: "quantity"
+          price: "price per day, USD"
+          extra-bed: "extra bed, USD"
+        rows:
+          1:
+            room-category: "Standard double with two beds"
+          2:
+            room-category: "Double Standard"
+          3:
+            room-category: "Comfort"
+          4:
+            room-category: "Junior"
+          5:
+            room-category: "Suite"
+          6:
+            room-category: "Honeymoon suite"
+
+
+
+    contact:
+      page-title: "Contact information"
+      info:
+        headers:
+          address: 'Address:'
+          gps: 'GPS:'
+          phone: 'Phone:'
+        gps: "%{deg1}° %{min1}′ %{submin1}″ N <br>%{deg2}° %{min2}′ %{submin2}″ E"
+
+
+
+      form-section:
+        title: "leave your message"
+
+
+
+

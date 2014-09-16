@@ -22,3 +22,12 @@ uk:
           label: "Оберіть номер:"
           error-message: "Виберіть, будь-ласка, номер!"
           null-text: "Виберіть, будь-ласка, номер!"
+
+    phone-labels:
+      hotel: "готель"
+      restaurant: "ресторан"
+
+    address: "80383 Львівська обл.,<br>Жовківський район, с. Малехів,<br>вул. Жовківська 1"
+
+    reservation-button: "бронювання"
+    contact-form-button: "надіслати"

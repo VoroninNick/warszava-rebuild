@@ -15,13 +15,12 @@
     </div>
     <div class="s12 push-contact-us-form contact-inline-min message">
       <label for="Текст Вашого повідомлення:"><%= t('partials.form.fields.message.label') %></label>
-      <textarea data-error-message="<%= t('partials.form.fields.message.error-message') %>" class="clear-contact-inputs s contact-text width1200 width-standart" cols="40" id="UserMsg" name="email_message[user_msg]" placeholder="<%= t('partials.form.fields.message.placeholder') %>" rows="20">
-      </textarea>
+      <textarea data-error-message="<%= t('partials.form.fields.message.error-message') %>" class="clear-contact-inputs s contact-text width1200 width-standart" cols="40" id="UserMsg" name="email_message[user_msg]" placeholder="<%= t('partials.form.fields.message.placeholder') %>" rows="20"></textarea>
     </div>
     <!--<div class="s12 submit-area"><input type="submit" name="" value="" class="submit-button" id="btn-submit"></div>-->
     <div class="s12 submit-area">
       <span class="brand-button brand-button-submit">
-        <span class="button-label">Замовити</span>
+        <span class="button-label"><%= t('partials.contact-form-button') %></span>
         <input type="submit" name="submit" value="" class="submit-button" id="btn-submit">
       </span>
     </div>

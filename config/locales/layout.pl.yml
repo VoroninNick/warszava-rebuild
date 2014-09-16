@@ -11,6 +11,7 @@ pl:
         year: "w %{date} roku."
 
         site-info:
+          display: false
           link:
             title: "O tej stronie"
             text: "O tej stronie"

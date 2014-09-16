@@ -187,7 +187,7 @@ function getFormForControl(selector){
 }
 
 function initFormValidation(){
-    $("input[type=submit]").click(function(event) {
+    $(".room-order-form input[type=submit]" ).click(function(event) {
         event.preventDefault()
         $(".error").hide();
         var hasError = false;

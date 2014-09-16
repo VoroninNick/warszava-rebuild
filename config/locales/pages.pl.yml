@@ -1,0 +1,60 @@
+pl:
+  pages:
+    rooms-list:
+      page-title: "POKOJE"
+      order-button:
+        label: "zamówienie"
+
+    home:
+      banner:
+        gps: "%{deg1}° %{min1}′ %{submin1}″ N <br>%{deg2}° %{min2}′ %{submin2}″ E"
+
+      services:
+        header: "USŁUGI"
+      announces:
+        header: "OGŁOSZENIA"
+
+    about:
+      page-title: "Witamy na Hotel-Restaurant WARSZAWIE"
+
+    prices:
+      table:
+        columns:
+          room-category: "Rodzaj pokoju"
+          quantity: "liczba"
+          price: "Cena za noc, грн."
+          extra-bed: "dostawka, грн."
+        rows:
+          1:
+            room-category: "Dwuosobowy standard z dwoma łóżkami"
+          2:
+            room-category: "standard double"
+          3:
+            room-category: "Komfort"
+          4:
+            room-category: "Junior"
+          5:
+            room-category: "Suite"
+          6:
+            room-category: "Apartament dla nowożeńców"
+
+
+
+    contact:
+      page-title: "Informacje kontaktowe"
+      info:
+        headers:
+          address: 'adres:'
+          gps: 'gps:'
+          phone: 'Telefon:'
+        address: "80383 Львівська обл., <br>Жовківський район, <br>с. Малехів, <br>вул. Жовківська 1 <br>"
+        gps: "%{deg1}° %{min1}′ %{submin1}″ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Пн.Ш. <br>%{deg2}° %{min2}′ %{submin2}″ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Сх.Д."
+
+
+
+      form-section:
+        title: "zostaw wiadomość"
+
+
+
+

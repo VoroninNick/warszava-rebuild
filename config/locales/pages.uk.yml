@@ -5,6 +5,19 @@ uk:
       order-button:
         label: "Замовити"
 
+    home:
+      banner:
+        gps: "%{deg1}° %{min1}′ %{submin1}″ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Пн.Ш. <br>%{deg2}° %{min2}′ %{submin2}″ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Сх.Д."
+
+      services:
+        header: "ПОСЛУГИ"
+      announces:
+        header: "АНОНСИ"
+
+
+    about:
+      page-title: "ВІТАЄМО У ГОТЕЛІ-РЕСТОРАНІ ВАРШАВА"
+
     prices:
       table:
         columns:
@@ -38,9 +51,7 @@ uk:
         address: "80383 Львівська обл., <br>Жовківський район, <br>с. Малехів, <br>вул. Жовківська 1 <br>"
         gps: "%{deg1}° %{min1}′ %{submin1}″ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Пн.Ш. <br>%{deg2}° %{min2}′ %{submin2}″ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Сх.Д."
 
-        phone-labels:
-          hotel: "готель"
-          restaurant: "ресторан"
+
 
       form-section:
         title: "залиште повідомлення"

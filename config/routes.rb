@@ -1,15 +1,21 @@
 WarszawaHotel::Application.routes.draw do
 
+  scope "(:locale)" do
+    devise_for :users
+    mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  end
+
 
   get 'order/order_room'
 
   mount Ckeditor::Engine => '/ckeditor'
-  devise_for :users
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  DynamicRouter.load
+
+
 
   scope "(:locale)" do
+
+
     match "rooms/:room_id/order", to: 'order#order_room', as: :order_specified_room, via: [:post, :get]
     get "/rooms/:id/order", to: 'order#order_room_form', as: :order_specified_room_form
 
@@ -34,6 +40,10 @@ WarszawaHotel::Application.routes.draw do
 
     root to: 'home#index'
   end
+
+  DynamicRouter.load
+
+
 
   get "*path", to: 'error#not_found', defaults: { error_code: 404 }
 

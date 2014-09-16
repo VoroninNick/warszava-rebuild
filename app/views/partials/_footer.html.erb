@@ -31,7 +31,9 @@
         <%= t('layout.footer.developed-by.dot') %>
         <br/>
         <%= t('layout.footer.developed-by.year', date: 2014) %>
-        <a class="vs-link" href="http://voroninstudio.eu/" title="<%= t('layout.footer.developed-by.site-info.link.title') %>"><%= t('layout.footer.developed-by.site-info.link.text') %></a>
+        <% if t('layout.footer.developed-by.site-info.display') %>
+          <a data-display="<%= t('layout.footer.developed-by.site-info.display') %>" class="vs-link" href="http://voroninstudio.eu/" title="<%= t('layout.footer.developed-by.site-info.link.title') %>"><%= t('layout.footer.developed-by.site-info.link.text') %></a>
+        <% end %>
       </p>
     </div>
     <div class="s8 v-last foot-line-up adress-mini-hide-me-up">
@@ -66,7 +68,9 @@
       <%= image_tag("vs-logo.png", :alt => "") %>
       <p class="<%= I18n.locale %>">
         <%= t('layout.footer.developed-by.handcrafted-in') %><a class="vs-link" href="http://voroninstudio.eu/" title="<%= t('layout.footer.developed-by.voronin-design-studio-link-title') %>"><%= t('layout.footer.developed-by.voronin-design-studio') %></a>
-        <a class="vs-link" href="http://voroninstudio.eu/" title="<%= t('layout.footer.developed-by.site-info.link.title') %>"><%= t('layout.footer.developed-by.site-info.link.text') %></a>
+        <% if t('layout.footer.developed-by.site-info.display') %>
+          <a myattr="<%= t('layout.footer.developed-by.site-info.display') %>" class="vs-link" href="http://voroninstudio.eu/" title="<%= t('layout.footer.developed-by.site-info.link.title') %>"><%= t('layout.footer.developed-by.site-info.link.text') %></a>
+        <% end %>
       </p>
     </div>
   </section>

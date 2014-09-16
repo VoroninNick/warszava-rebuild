@@ -79,11 +79,11 @@
           </select>
       <% end %>
       <label for="Вас звати:">Вас звати:</label>
-      <%= f.text_field :name, :placeholder => "Константин Константинопольскій", :id => "UserName", :class => "clear-contact-inputs s user-name contact-inline-min-inputs" %>
+      <%= f.text_field :name, :placeholder => t('partials.form.fields.name.placeholder'), :id => "UserName", :class => "clear-contact-inputs s user-name contact-inline-min-inputs" %>
       <label for="Ваш номер телефону:">Ваш номер телефону:</label>
-      <%= f.text_field :phone, :placeholder => "+38 (098) 511 77 73", :id => "UserPhone", :class => "clear-contact-inputs s user-phone contact-inline-min-inputs" %>
+      <%= f.text_field :phone, :placeholder => t('partials.form.fields.phone.placeholder'), :id => "UserPhone", :class => "clear-contact-inputs s user-phone contact-inline-min-inputs" %>
       <label for="Ваш e-mail:">Ваш e-mail:</label>
-      <%= f.text_field :email, :placeholder => "konstantin.kost@gmail.com", :id => "UserEmail", :class => "clear-contact-inputs s user-email contact-inline-min-inputs" %>
+      <%= f.text_field :email, :placeholder => t('partials.form.fields.email.placeholder'), :id => "UserEmail", :class => "clear-contact-inputs s user-email contact-inline-min-inputs", html: { da } %>
 
     </div>
     <div class="s12 push-contact-us-form contact-inline-min message">
