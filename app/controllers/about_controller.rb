@@ -30,5 +30,9 @@ class AboutController < ApplicationController
     @title = 'Ціни //Готель львів//Готель варшава//Готелі львова//Львів готель'
     @meta_description = ''
     @meta_keywords = ''
+
+    @rooms = Room.where(published: 't').order('id desc')
+
+    render template: 'about/db_prices'
   end
 end

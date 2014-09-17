@@ -1,0 +1,128 @@
+<script>
+    $(document).ready(function(){
+        $('.iframe').fancybox(function(){
+            console.log('up here');
+        });
+    });
+</script>
+<a href="" class="iframe"></a>
+<section id="wr" class="container">
+  <div id="bring-me-up">
+    <article id="about-us-page" class="row">
+      <div class="s3 about-full-width ">
+        <%= render partial: "partials/about_menu" %>
+      </div>
+      <div class="s9 about-full-width about-fix-width">
+        <%# container :prices_table %>
+        <style>
+            table{
+                width: 100%;
+            }
+            thead{
+                width: 100%;
+                background: url('assets/form-background_03.jpg') repeat rgba(0, 0, 0, 0) !important;
+                border: 1px solid rgb(177, 173, 170) !important;
+                padding: 5px 0;
+            }
+            .f-td{
+                width: 40%;
+                padding: 5px 0;
+            }
+            .s-td{
+                width: 15%;
+                padding: 5px 0;
+            }
+            .th-td{
+                width: 22,5%;
+                padding: 5px 0;
+            }
+            .fo-td{
+                width: 22,5%;
+                padding: 5px 0;
+            }
+            .f-td p,
+            .s-td p,
+            .th-td p,
+            .fo-td p{
+                margin-left: 10px;
+                margin-bottom: 2px;
+            }
+            .f-td p i,
+            .s-td p i,
+            .th-td p i,
+            .fo-td p i{
+                color: #53381b;
+                font-size: 12px;
+            }
+            .p-cent{
+                text-align: center;
+            }
+            .descr-price{
+                margin-top: 30px;
+                margin-bottom: 280px;
+            }
+
+            .descr-price p{
+                margin-bottom: 6px;
+            }
+
+            .price-p{
+                font-size: 20px;
+            }
+
+            tr.transparent{
+                background: transparent;
+            }
+
+            tr.colored{
+                background: #cab8a9;
+            }
+        </style>
+        <table>
+          <thead>
+          <tr>
+            <td class="f-td"><p><%= t('pages.prices.table.columns.room-category') %></p> </td>
+            <td class="s-td"><p><%= t('pages.prices.table.columns.quantity') %></p></td>
+            <td class="th-td"><p><%= t('pages.prices.table.columns.price') %></p></td>
+            <td class="fo-td"><p><%= t('pages.prices.table.columns.extra-bed') %></p></td>
+          </tr>
+          </thead>
+          <tbody>
+          <% @rooms.each_with_index do |room, room_index| %>
+              <tr class="<%= room_index % 2 == 0?  "transparetn" : "colored" %>">
+                <td class="f-td"><p><%= room.name %></p></td>
+                <td class="s-td"><p class="p-cent"><%= room.quantity %></p></td>
+                <td class="th-td"><p class="p-cent price-p"><%= room.price_per_night %></p></td>
+                <td class="fo-td"><p class="p-cent"><%= room.extra_bed_price %></p></td>
+              </tr>
+          <% end %>
+
+
+
+          </tbody>
+          <tfoot>
+          </tfoot>
+        </table>
+        <div class="descr-price">
+          <p><%= t('pages.prices.text.p1') %></p>
+          <br class="clearfix" />
+          <p><%= t('pages.prices.text.p2') %></p>
+
+          <br class="clearfix" />
+          <p><%= t('pages.prices.text.p3') %></p>
+
+          <br class="clearfix" />
+          <p><%= t('pages.prices.text.p4') %></p>
+
+        </div>
+      </div>
+      <br class="clearfix" />
+      <div id="pushup" style="height: 320px;">&nbsp;</div>
+    </article>
+    <div class="push-crown row">
+      <div class="s5 br-h">&nbsp;</div>
+      <div class="s2" style="text-align: center;"><%= image_tag("crown-end.png") %></div>
+      <div class="s5 br-h crown-last-width">&nbsp;</div>
+    </div>
+  </div>
+</section>

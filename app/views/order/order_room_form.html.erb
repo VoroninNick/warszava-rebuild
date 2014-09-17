@@ -70,25 +70,25 @@
     <%# f.cms_error_messages %>
     <div class="s12 push-contact-us-form contact-inline-min">
       <% if true %>
-          <label for="Вас звати:">Оберіть номер:</label>
-          <select name="room_order[room]">
-            <option value="0">Виберіть номер зі списку</option>
+          <label for="room-select"><%= t('partials.form.fields.room.label') %></label>
+          <select id="room-select" name="room_order[room]" data-error-message="<%= t('partials.form.fields.room.error-message') %>">
+            <option value="0"><%= t('partials.form.fields.room.null-text') %></option>
             <% @available_rooms.each do |room| %>
                 <option value="<%= room.id %>" <%= "selected" if @specified_room.respond_to?(:id) && room.id == @specified_room.id %> ><%= room.name %></option>
             <% end %>
           </select>
       <% end %>
-      <label for="Вас звати:">Вас звати:</label>
-      <%= f.text_field :name, :placeholder => t('partials.form.fields.name.placeholder'), :id => "UserName", :class => "clear-contact-inputs s user-name contact-inline-min-inputs" %>
-      <label for="Ваш номер телефону:">Ваш номер телефону:</label>
-      <%= f.text_field :phone, :placeholder => t('partials.form.fields.phone.placeholder'), :id => "UserPhone", :class => "clear-contact-inputs s user-phone contact-inline-min-inputs" %>
-      <label for="Ваш e-mail:">Ваш e-mail:</label>
-      <%= f.text_field :email, :placeholder => t('partials.form.fields.email.placeholder'), :id => "UserEmail", :class => "clear-contact-inputs s user-email contact-inline-min-inputs" %>
+      <label for="UserName"><%= t('partials.form.fields.name.label') %></label>
+      <%= f.text_field :name, :placeholder => t('partials.form.fields.name.placeholder'), :id => "UserName", :class => "clear-contact-inputs s user-name contact-inline-min-inputs", :"data-error-message" => t('partials.form.fields.name.error-message') %>
+      <label for="UserPhone"><%= t('partials.form.fields.phone.label') %></label>
+      <%= f.text_field :phone, :placeholder => t('partials.form.fields.phone.placeholder'), :id => "UserPhone", :class => "clear-contact-inputs s user-phone contact-inline-min-inputs", :"data-error-message" => t('partials.form.fields.phone.error-message') %>
+      <label for="UserEmail"><%= t('partials.form.fields.email.label') %></label>
+      <%= f.text_field :email, :placeholder => t('partials.form.fields.email.placeholder'), :id => "UserEmail", :class => "clear-contact-inputs s user-email contact-inline-min-inputs", :"data-error-message" => t('partials.form.fields.email.error-message') %>
 
     </div>
     <div class="s12 push-contact-us-form contact-inline-min message">
-      <label for="Текст Вашого повідомлення:">Текст Вашого повідомлення:</label>
-      <%= f.text_area :message, :placeholder => "Ми піклуємося про те, щоб кожен гість отримав лише якісний та сучасний сервіс, що є для нас найкращою рекомендацією та компліментом.", :id => "UserMsg", :class => "clear-contact-inputs s contact-text width1200 width-standart" %>
+      <label for="UserMsg"><%= t('partials.form.fields.message.label') %></label>
+      <%= f.text_area :message, :placeholder => t('partials.form.fields.message.placeholder'), :id => "UserMsg", :class => "clear-contact-inputs s contact-text width1200 width-standart", :"data-error-message" => t('partials.form.fields.message.error-message') %>
     </div>
     <div class="s12 submit-area">
       <!--<input type="submit" name="" value="" class="submit-button" id="btn-submit">-->

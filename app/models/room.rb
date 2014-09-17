@@ -7,6 +7,7 @@ class Room < ActiveRecord::Base
 
   attr_accessible :name, :full_description
   attr_accessible :published, :deleted, :archived, :created_by, :updated_by, :version, :lock_version
+  attr_accessible :quantity, :price_per_night, :extra_bed_price
 
   attr_accessible :avatar
   mount_uploader :avatar, RoomAvatarUploader
@@ -16,6 +17,8 @@ class Room < ActiveRecord::Base
   attr_accessible :room_gallery_images
   accepts_nested_attributes_for :room_gallery_images
   attr_accessible :room_gallery_images_attributes
+
+
 
 
 
@@ -56,6 +59,10 @@ class Room < ActiveRecord::Base
       field :room_gallery_images
 
       field :room_orders
+
+      field :quantity
+      field :price_per_night
+      field :extra_bed_price
     end
 
     list do

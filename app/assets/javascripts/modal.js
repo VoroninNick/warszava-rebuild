@@ -189,6 +189,8 @@ function getFormForControl(selector){
 function initFormValidation(){
     $(".room-order-form input[type=submit]" ).click(function(event) {
         event.preventDefault()
+
+        $form = $('.room-order-form')
         $(".error").hide();
         var hasError = false;
         var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
@@ -209,11 +211,17 @@ function initFormValidation(){
 //
 //        }
         if(room_id == 0){
-            $("select").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">Виберіть, будь-ласка, номер! </span>');
+            $input = $form.find("select")
+            error_msg = $input.attr('data-error-message')
+
+            $input.after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">'+error_msg+'</span>');
             hasError = true
         }
         if(nameVal == '') {
-            $("#UserName").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">Введіть будь-ласка Ваше імя! </span>');
+            $input = $form.find("#UserName")
+            error_msg = $input.attr('data-error-message')
+
+            $input.after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">'+error_msg+'</span>');
             //$("#UserEmail").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">Введіть будь-ласка Вашу поштову скриньку!</span>');
             //$("#UserPhone").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">Введіть будь-ласка Ваш телефон!</span>');
             //$("#UserMsg").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: left;color: #7c1616;">Введіть будь-ласка Ваше повідомлення!</span>');
@@ -221,20 +229,29 @@ function initFormValidation(){
 
         }
         if(emailaddressVal == '' || !emailReg.test(emailaddressVal)) {
-            $("#UserEmail").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">Введіть будь-ласка Вашу поштову скриньку!</span>');
+            $input = $form.find("#UserEmail")
+            error_msg = $input.attr('data-error-message')
+
+            $input.after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">'+error_msg+'</span>');
             //$("#UserPhone").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">Введіть будь-ласка Ваш телефон!</span>');
             //$("#UserMsg").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: left;color: #7c1616;">Введіть будь-ласка Ваше повідомлення!</span>');
             hasError = true;
 
         }
         if(phoneaVal == '' || !phoneReg.test(phoneaVal)) {
-            $("#UserPhone").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">Введіть будь-ласка Ваш телефон!</span>');
+            $input = $form.find("#UserPhone")
+            error_msg = $input.attr('data-error-message')
+
+            $input.after('<span class="error" style="padding-left: 20px;font-size: 10px;float: right;color: #7c1616;">'+error_msg+'</span>');
             //$("#UserMsg").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: left;color: #7c1616;">Введіть будь-ласка Ваше повідомлення!</span>');
             hasError = true;
 
         }
         if(msgVal == '') {
-            $("#UserMsg").after('<span class="error" style="padding-left: 20px;font-size: 10px;float: left;color: #7c1616;">Введіть будь-ласка Ваше повідомлення!</span>');
+            $input = $form.find("#UserMsg")
+            error_msg = $input.attr('data-error-message')
+
+            $input.after('<span class="error" style="padding-left: 20px;font-size: 10px;float: left;color: #7c1616;">'+error_msg+'</span>');
             hasError = true;
         }
 
@@ -247,7 +264,7 @@ function initFormValidation(){
             //var expiry = {seconds:25*60};
             //$.cookie( 'e_mails', '1', { expires: expiry } );
 
-            var room_id = $('select').val()
+            var room_id = $form.find('select').val()
 
             $("#contact-form-section").hide();
             var $contact_form = $('#order-form-wrapper').find('form')

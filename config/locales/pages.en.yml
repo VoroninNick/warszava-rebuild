@@ -22,10 +22,10 @@ en:
     prices:
       table:
         columns:
-          room-category: "room category"
-          quantity: "quantity"
-          price: "price per day, USD"
-          extra-bed: "extra bed, USD"
+          room-category: "Room category"
+          quantity: "Quantity"
+          price: "Rate per night, UAH"
+          extra-bed: "Extra bed, UAH"
         rows:
           1:
             room-category: "Standard double with two beds"
@@ -39,6 +39,13 @@ en:
             room-category: "Suite"
           6:
             room-category: "Honeymoon suite"
+
+      text:
+        p1: "Check-out time 12:00, check-in time 14:00, breakfast 8:00 – 10:00"
+        p2: "The price includes: WI-FI INTERNET ACCESS, parking,, correspondence delivery, taxi ordering and taxes."
+        p3: "In case the room is vacated 12 hours after check-out hour, the fee is charged for additional ½ price."
+        p4: "Guaranteed early check-in -1/2 of room rate."
+
 
 
 

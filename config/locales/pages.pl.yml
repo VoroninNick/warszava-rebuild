@@ -39,6 +39,13 @@ pl:
             room-category: "Apartament dla nowożeńców"
 
 
+      text:
+        p1: "Sprawdź, w hotelu 12:00; czas przybycia 14:00, śniadanie 8:00 - 10:00"
+        p2: "Cena zawiera: bezprzewodowy internet, parking,, przechowalnię bagażu, przesyłki, taxi, podatki."
+        p3: "Przy wyjeździe w ciągu 12 godzin od zameldowania godzin opłat za pobyt jest pobierana w trakcie pół dnia."
+        p4: "Gwarantowane wczesne zameldowanie - połowa ceny pokoju za dobę."
+
+
 
     contact:
       page-title: "Informacje kontaktowe"
