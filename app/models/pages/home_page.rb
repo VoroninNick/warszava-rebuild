@@ -13,9 +13,27 @@ class Pages::HomePage < ActiveRecord::Base
   attr_accessible :home_gallery_images_attributes
 
 
+
+  translates :welcome_html
+  accepts_nested_attributes_for :translations
+  attr_accessible :translations, :translations_attributes
+
+  class Translation
+    attr_accessible :locale, :welcome_html
+
+    rails_admin do
+      edit do
+        field :locale, :hidden
+        field :welcome_html, :ck_editor
+      end
+    end
+  end
+
+
   rails_admin do
     edit do
-      field :welcome_html, :ck_editor
+      #field :welcome_html, :ck_editor
+      field :translations, :globalize_tabs
       field :home_gallery_images
       field :page
     end
