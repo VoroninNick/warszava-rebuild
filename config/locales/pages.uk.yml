@@ -17,6 +17,8 @@ uk:
 
     about:
       page-title: "ВІТАЄМО У ГОТЕЛІ-РЕСТОРАНІ ВАРШАВА"
+      photo-gallery-section:
+        title: "ФОТОГАЛЕРЕЯ"
 
     prices:
       table:
@@ -46,6 +48,11 @@ uk:
         p4: "Гарантований ранковий заїзд – половина вартості номеру за добу."
 
 
+    services:
+      page-title: "Послуги"
+
+    articles:
+      read-also: "Читайте також"
 
     contact:
       page-title: "Контактна інформація"

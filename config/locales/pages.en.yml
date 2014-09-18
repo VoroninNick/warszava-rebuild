@@ -18,6 +18,9 @@ en:
 
     about:
       page-title: "Welcome to Hotel-Restaurant WARSAW"
+      photo-gallery-section:
+        title: "GALLERY"
+
 
     prices:
       table:
@@ -48,6 +51,12 @@ en:
 
 
 
+    services:
+      page-title: "Services"
+
+    articles:
+      read-also: "Read also"
+
 
     contact:
       page-title: "Contact information"
@@ -62,6 +71,7 @@ en:
 
       form-section:
         title: "leave your message"
+
 
 
 

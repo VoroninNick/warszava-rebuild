@@ -18,17 +18,17 @@
       </div>
       <div class="s7 hide-me-if-im-small">
         <h2 id="no-pad">
-          <%= item.name %>
+          <%= item.translations_by_locale[I18n.locale].name %>
         </h2>
         <div class="services-full-descr">
-          <%= item.full_description.html_safe %>
+          <%= item.translations_by_locale[I18n.locale].full_description.html_safe %>
         </div>
         <% item.service_gallery_images.each do |image| %>
             <%= link_to(image_tag(image.image.service_thumb.url, :alt => "", :class => "br", :style => "color: white !important; margin-bottom: 10px;"), image.image.service_large.url, :class => "service-img-margin hide-me-if-im-small fancy-me", :rel => "sr#{item.id}") %>
         <% end %>
       </div>
       <!-- SHOW ME UP IF IM SMALL -->
-      <div class="s12 show-me-if-im-small"><h2><%= item.name %></h2></div>
+      <div class="s12 show-me-if-im-small"><h2><%= item.translations_by_locale[I18n.locale].name %></h2></div>
       <div class="s6 show-me-if-im-small size-up-first-img">
         <% [item.avatar].first(1).each do |avatar| %>
             <%= link_to(image_tag(avatar.service_avatar.url, :alt => "", :class => "br"), avatar.service_avatar_large.url, :rel => "sr#{item.id}", :class => "fancy-me") %>
@@ -39,7 +39,7 @@
             <%= link_to(image_tag(image.image.service_thumb.url, :alt => "", :class => "br service-margin-me#{" service-img-last" if index == item.service_gallery_images.count - 1}", :style => "color: white !important;"), image.image.service_large.url, :class => "service-img-margin fancy-me ", :rel => "sr#{item.id}") %>
         <% end %>
       </div>
-      <div class="s12 show-me-if-im-small"><p class="services-full-descr"><%= item.full_description.html_safe %></p></div>
+      <div class="s12 show-me-if-im-small"><p class="services-full-descr"><%= item.translations_by_locale[I18n.locale].full_description.html_safe %></p></div>
       <!-- /SHOW ME UP IF IM SMALL -->
     </div>
     <!-- /SERVICES DISPLAY LINE UP -->

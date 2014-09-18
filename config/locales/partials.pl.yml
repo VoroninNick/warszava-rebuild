@@ -23,6 +23,9 @@ pl:
           error-message: "wybierz pokój!"
           null-text: "Wybierz pokój!"
 
+    order-form:
+      title: "Rezerwacje Pokoi"
+
     phone-labels:
       hotel: "hotel"
       restaurant: "restauracja"
@@ -31,3 +34,4 @@ pl:
 
     reservation-button: "rezerwacja"
     contact-form-button: "wyślij"
+    order-button: "Zamówienie"

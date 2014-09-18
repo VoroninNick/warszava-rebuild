@@ -75,10 +75,10 @@
       </div>
       <div class="s7 hide-me-if-im-small">
         <h2 id="no-pad">
-          <%= image_tag("h1-mr.png", :alt => ">", :class => "h1-mr") %><%= item.name %>
+          <%= image_tag("h1-mr.png", :alt => ">", :class => "h1-mr") %><%= item.translations_by_locale[I18n.locale].name %>
         </h2>
         <div class="services-full-descr">
-          <%= item.full_description.html_safe %>
+          <%= item.translations_by_locale[I18n.locale].full_description.html_safe %>
         </div>
         <% item.room_gallery_images.each do |image| %>
             <%= link_to(image_tag(image.image.room_thumb.url, :alt => "", :class => "br", :style => "color: white !important;"), image.image.room_large.url, :class => "service-img-margin hide-me-if-im-small fancy-me", :rel => "sr#{item.id}") %>
@@ -86,11 +86,11 @@
 
         <div class="order">
           <!--<a data-fancybox-type="iframe" href="<%# order_room_form_path(id: item.id, locale: I18n.locale) %>">Замовити</a>-->
-          <a data-fancybox-type="iframe" data-room-id="<%= item.id %>" href="<%= order_specified_room_form_path(id: item.id, locale: I18n.locale) %>" class="brand-button modal-link"><span>Замовити</span></a>
+          <a data-fancybox-type="iframe" data-room-id="<%= item.id %>" href="<%= order_specified_room_form_path(id: item.id, locale: I18n.locale) %>" class="brand-button modal-link"><span><%= t('pages.rooms-list.order-button.label') %></span></a>
         </div>
       </div>
       <!-- SHOW ME UP IF IM SMALL -->
-      <div class="s12 show-me-if-im-small"><h2><%= image_tag("h1-mr.png", :alt => ">", :class => "h1-mr") %><%= item.name %></h2></div>
+      <div class="s12 show-me-if-im-small"><h2><%= image_tag("h1-mr.png", :alt => ">", :class => "h1-mr") %><%= item.translations_by_locale[I18n.locale].name %></h2></div>
       <div class="s6 show-me-if-im-small size-up-first-img">
         <% [item.avatar].first(1).each do |img| %>
             <%= image_tag(img.room_avatar.url, :alt => "", :class => "br") %>
@@ -102,7 +102,7 @@
         <% end %>
 
       </div>
-      <div class="s12 show-me-if-im-small"><p class="services-full-descr"><%= item.full_description.html_safe %></p></div>
+      <div class="s12 show-me-if-im-small"><p class="services-full-descr"><%= item.translations_by_locale[I18n.locale].full_description.html_safe %></p></div>
       <!-- /SHOW ME UP IF IM SMALL -->
     </div>
     <!-- /ROOMS DISPLAY LINE UP -->

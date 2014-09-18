@@ -36,8 +36,12 @@ RailsAdmin.config do |config|
 
   config.included_models = [Pages::AboutPage, Pages::HomePage, Banner, BannerImage, Gallery, SitemapRecord, User, Menu, HomeGalleryImage, AboutPageGalleryImage, RoomGalleryImage, ServiceGalleryImage, FormConfig, Order]
 
-  [Service, Room, Article, Vacancy, HtmlBlock, Page, MenuItem, Pages::RoomsList, Pages::Restaurant].each do |model|
+  [Service, Room, Article, Vacancy, HtmlBlock, Page, MenuItem ].each do |model|
     config.included_models += [model, model::Translation]
+  end
+
+  ["Services", "AboutPage", "HomePage", "Restaurant", "RoomsList"].each do |model|
+    config.included_models += ["Pages::#{model}", "Pages::#{model}::Translation"]
   end
 
   root = Tree::TreeNode.new('navigation_static_tree')
@@ -67,6 +71,7 @@ RailsAdmin.config do |config|
   pages << Tree::TreeNode.new('about_page', { title: 'Про нас', link: '/admin/pages~about_page/1' } )
   pages << Tree::TreeNode.new('rooms_list', { title: 'Номери', link: '/admin/pages~rooms_list/1' } )
   pages << Tree::TreeNode.new('restaurant', { title: 'Ресторан', link: '/admin/pages~restaurant/1' } )
+  pages << Tree::TreeNode.new('services', { title: 'Послуги', link: '/admin/pages~services/1' } )
 
 
 

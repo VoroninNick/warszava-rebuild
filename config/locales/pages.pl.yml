@@ -16,6 +16,8 @@ pl:
 
     about:
       page-title: "Witamy na Hotel-Restaurant WARSZAWIE"
+      photo-gallery-section:
+        title: "GALERIA"
 
     prices:
       table:
@@ -46,6 +48,11 @@ pl:
         p4: "Gwarantowane wczesne zameldowanie - połowa ceny pokoju za dobę."
 
 
+    services:
+      page-title: "Usługi"
+
+    articles:
+      read-also: "Więcej"
 
     contact:
       page-title: "Informacje kontaktowe"

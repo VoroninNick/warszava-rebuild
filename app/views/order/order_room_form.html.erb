@@ -63,7 +63,7 @@
 </style>
 <div class="form-section<%= " specified-room-order-form-section" if false %>">
 
-<div class="s12" id="msg-header"><h2 class="contact-h1-second">Замовлення номеру</h2></div>
+<div class="s12" id="msg-header"><h2 class="contact-h1-second"><%= t('partials.order-form.title') %></h2></div>
 <div class="clearfix"></div>
 <%= form_for @order_room_form_object, :url => order_room_path, :method=>'post', html: {id: 'room-order-form', class: "room-order-form#{" specified-room-order-form" if @is_specified_room == true}"} do |f| %>
     <%# hidden_field_tag :email_page_portlet_url, @email_page_portlet_url %>
@@ -93,7 +93,7 @@
     <div class="s12 submit-area">
       <!--<input type="submit" name="" value="" class="submit-button" id="btn-submit">-->
       <span class="brand-button brand-button-submit">
-        <span class="button-label">Замовити</span>
+        <span class="button-label"><%= t('partials.order-button') %></span>
         <input type="submit" name="submit" value="" class="submit-button" id="btn-submit">
 
       </span>

@@ -23,6 +23,9 @@ uk:
           error-message: "Виберіть, будь-ласка, номер!"
           null-text: "Виберіть, будь-ласка, номер!"
 
+    order-form:
+      title: "Замовлення номеру"
+
     phone-labels:
       hotel: "готель"
       restaurant: "ресторан"
@@ -31,3 +34,4 @@ uk:
 
     reservation-button: "бронювання"
     contact-form-button: "надіслати"
+    order-button: "замовити"

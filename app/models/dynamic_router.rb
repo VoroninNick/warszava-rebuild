@@ -14,7 +14,8 @@ class DynamicRouter
 
 
 
-        page.translations_by_locale.keys.each do |locale|
+        #page.translations_by_locale.keys.each do |locale|
+        I18n.available_locales.each do |locale|
           I18n.with_locale locale do
             get "#{page.full_path}", :to => to, defaults: { page_id: page.id, for_locale: locale, locale_missed_in_request_url: true }
             get "(:locale)#{page.full_path}", :to => to, locale: /#{locale.to_s}/, defaults: { page_id: page.id, locale: locale }

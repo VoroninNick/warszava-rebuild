@@ -16,6 +16,9 @@ WarszawaHotel::Application.routes.draw do
   scope "(:locale)" do
 
 
+    get "/articles", to: 'articles#list'
+    get '/articles/:article_path', to: 'articles#item', as: :source_article_item
+
     match "rooms/:room_id/order", to: 'order#order_room', as: :order_specified_room, via: [:post, :get]
     get "/rooms/:id/order", to: 'order#order_room_form', as: :order_specified_room_form
 

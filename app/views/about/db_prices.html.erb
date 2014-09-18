@@ -90,7 +90,7 @@
           <tbody>
           <% @rooms.each_with_index do |room, room_index| %>
               <tr class="<%= room_index % 2 == 0?  "transparetn" : "colored" %>">
-                <td class="f-td"><p><%= room.name %></p></td>
+                <td class="f-td"><p><%= room.translations_by_locale[I18n.locale].name %></p></td>
                 <td class="s-td"><p class="p-cent"><%= room.quantity %></p></td>
                 <td class="th-td"><p class="p-cent price-p"><%= room.price_per_night %></p></td>
                 <td class="fo-td"><p class="p-cent"><%= room.extra_bed_price %></p></td>
