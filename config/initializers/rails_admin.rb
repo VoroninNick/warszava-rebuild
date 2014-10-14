@@ -55,7 +55,7 @@ RailsAdmin.config do |config|
   root << Tree::TreeNode.new('vacancies', title: 'Вакансії')
   root << Tree::TreeNode.new('form_config', title: 'Форми')
   root << Tree::TreeNode.new('navigation', title: 'Навігація')
-
+  root << Tree::TreeNode.new('users', title: 'Користувачі')
 
 
 
@@ -104,5 +104,7 @@ RailsAdmin.config do |config|
   root_navigation << Tree::TreeNode.new('order_form_config', { title: 'меню', link: '/admin/menu' } )
   root_navigation << Tree::TreeNode.new('order_history', { title: 'пункти меню', link: '/admin/menu_item' } )
 
+  root_users = root['users']
+  root_users << Tree::TreeNode.new('users_users', {title: 'Користувачі', link: '/admin/user'})
 
 end

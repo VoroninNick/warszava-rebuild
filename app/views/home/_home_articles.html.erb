@@ -37,12 +37,20 @@
 <% @articles.each do |item| %>
     <div class="article s6 n-max <%= cycle("", "", "pad-n", "pad-n") %>" >
       <% [item.avatar].each do |image| %>
+          <% if item && item.page && item.page.respond_to?(:full_path_with_locale) %>
           <%= link_to image_tag(image.url(:thumb), :class => "br f-l"), item.page.full_path_with_locale %>
+          <% else %>
+            <%= image_tag(image.url(:thumb), :class => "br f-l")  %>
+          <% end %>
       <% end %>
       <div class="pad-r">
+        <% if item && item.page && item.page.respond_to?(:full_path_with_locale) %>
         <a class="article-title-link" href="<%= item.page.full_path_with_locale %>" title="<%= item.name %>">
           <h3 class="article-title" style="margin-top: -7px;"><%= item.name %></h3>
         </a>
+        <% else %>
+          <h3 class="article-title" style="margin-top: -7px;"><%= item.name %></h3>
+        <% end %>
         <%# @truncate_me = item.description.html_safe unless item.description.blank? %>
         <p class="article-short-description">
           <i>
@@ -50,7 +58,11 @@
           </i>
         </p>
 
-        <%= link_to image_tag("h1-mr.png", :alt => ">"), "#{item.page.full_path_with_locale}", :class => "f-r more-link", :title => "#{item.name}", :style => "margin-top: 0px;" %>
+        <% if item && item.page && item.page.respond_to?(:full_path_with_locale) %>
+        <%= link_to( image_tag("h1-mr.png", :alt => ">"), "#{item.page.full_path_with_locale}", :class => "f-r more-link", :title => "#{item.name}", :style => "margin-top: 0px;") %>
+        <% else %>
+          <%= image_tag("h1-mr.png", :alt => ">")  %> 
+        <% end %>
       </div><!-- class:pad-r -->
     </div><!-- class:s6 n-max -->
 <% end %>
